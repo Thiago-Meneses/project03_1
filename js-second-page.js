@@ -133,6 +133,96 @@ var met_user_answers = [
   '0'
 ]
 
+var ct_answers = [
+  'btn1_op3',
+  'btn2_op1',
+  'btn3_op4',
+  'btn4_op2',
+  'btn5_op2',
+  'btn6_op4',
+  'btn7_op4',
+  'btn8_op4',
+  'btn9_op2',
+  'btn10_op2',
+  'btn11_op1',
+  'btn12_op1',
+  'btn13_op2',
+  'btn14_op1',
+  'btn15_op4',
+  'btn16_op4',
+  'btn17_op2',
+  'btn18_op3',
+  'btn19_op4',
+  'btn20_op3'
+]
+var ct_user_answers = [
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0'
+]
+
+var tv_answers = [
+  'btn1_op4',
+  'btn2_op1',
+  'btn3_op3',
+  'btn4_op4',
+  'btn5_op4',
+  'btn6_op3',
+  'btn7_op1',
+  'btn8_op3',
+  'btn9_op1',
+  'btn10_op4',
+  'btn11_op3',
+  'btn12_op2',
+  'btn13_op3',
+  'btn14_op4',
+  'btn15_op1',
+  'btn16_op3',
+  'btn17_op2',
+  'btn18_op2',
+  'btn19_op3',
+  'btn20_op4'
+]
+var tv_user_answers = [
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0',
+  '0'
+]
+
 
 //GET THE UTC
 var UTC = new Date().getTime()
@@ -238,29 +328,47 @@ function met(){
 
 //LOADS CT QUESTIONS
 function ct(){
+  c_op1.checked = false
+  c_op2.checked = false
+  c_op3.checked = false
+  c_op4.checked = false
+  c_op1.setAttribute('oninput', 'ct_question_check()' )
+  c_op2.setAttribute('oninput', 'ct_question_check()' )
+  c_op3.setAttribute('oninput', 'ct_question_check()' )
+  c_op4.setAttribute('oninput', 'ct_question_check()' )
   for ( x=1 ; x<=20 ; x++ ) {
     document.getElementById(`btn${x}`).setAttribute('onclick', `ct_call(${x})`)
   }
-  fill_question_header.innerHTML = '1. PLACEHOLDER FOR WHEN I CLICK CT'
-  c_fill_1.innerHTML             = 'CT1'
-  c_fill_2.innerHTML             = 'CT2'
-  c_fill_3.innerHTML             = 'CT3'
-  c_fill_4.innerHTML             = 'CT4'
+  fill_question_header.innerHTML = '1. Se, durante o funcionamento normal do motor o filtro de óleo vier a ficar obstruído, o(a):'
+  c_fill_1.innerHTML             = 'Motor apagar-se-á.'
+  c_fill_2.innerHTML             = 'Válvula By-Pass fechar-se-á.'
+  c_fill_3.innerHTML             = 'Motor funcionará com o óleo contaminado.'
+  c_fill_4.innerHTML             = 'Válvula reguladora de pressão abrir-se-á'
 
 }
 
 //LOADS TV QUESTIONS
 function tv(){
+  c_op1.checked = false
+  c_op2.checked = false
+  c_op3.checked = false
+  c_op4.checked = false
+  c_op1.setAttribute('oninput', 'tv_question_check()' )
+  c_op2.setAttribute('oninput', 'tv_question_check()' )
+  c_op3.setAttribute('oninput', 'tv_question_check()' )
+  c_op4.setAttribute('oninput', 'tv_question_check()' )
   for ( x=1 ; x<=20 ; x++ ) {
     document.getElementById(`btn${x}`).setAttribute('onclick', `tv_call(${x})`)
   }
-  fill_question_header.innerHTML = '1. PLACEHOLDER FOR WHEN I CLICK TV'
-  c_fill_1.innerHTML             = 'TV1'
-  c_fill_2.innerHTML             = 'TV2'
-  c_fill_3.innerHTML             = 'TV3'
-  c_fill_4.innerHTML             = 'TV4'
+  fill_question_header.innerHTML = '1. Quanto a desidade do ar, pode-se afirmar que:'
+  c_fill_1.innerHTML             = 'Aumenta, com o aumento da altitude.'
+  c_fill_2.innerHTML             = 'Diminui, com a diminuição da altitude.'
+  c_fill_3.innerHTML             = 'Aumenta, com o aumento da temperatura'
+  c_fill_4.innerHTML             = 'Diminui, com o aumento da temperatura.'
 
 }
+
+
 
 var button_that_clicked
 //REG QUESTIONS
@@ -1534,165 +1642,420 @@ function met_call(question_btn){
 
 //CT QUESTIONS
 function ct_call(question_btn){
+  c_op1.checked = false
+  c_op2.checked = false
+  c_op3.checked = false
+  c_op4.checked = false
+  button_that_clicked = window.event.target.id
+  c_op1.setAttribute('id', `${button_that_clicked}_op1`)
+  c_op2.setAttribute('id', `${button_that_clicked}_op2`)
+  c_op3.setAttribute('id', `${button_that_clicked}_op3`)
+  c_op4.setAttribute('id', `${button_that_clicked}_op4`)
+
+  c_op1.setAttribute('oninput', `ct_question_check()`)
+  c_op2.setAttribute('oninput', `ct_question_check()`)
+  c_op3.setAttribute('oninput', `ct_question_check()`)
+  c_op4.setAttribute('oninput', `ct_question_check()`)
+  var set_ct
   switch (question_btn){
     case 1:
-      fill_question_header.innerHTML = 'DEU CERTOOO'
-      c_fill_1.innerHTML             = 'Gerais.'
-      c_fill_2.innerHTML             = 'Específicas.'
-      c_fill_3.innerHTML             = 'De voo visual.'
-      c_fill_4.innerHTML             = 'De voo por instrumentos.'
+      fill_question_header.innerHTML = '1. Se, durante o funcionamento normal do motor o filtro de óleo vier a ficar obstruído, o(a):'
+      c_fill_1.innerHTML             = 'Motor apagar-se-á.'
+      c_fill_2.innerHTML             = 'Válvula By-Pass fechar-se-á.'
+      c_fill_3.innerHTML             = 'Motor funcionará com o óleo contaminado.'
+      c_fill_4.innerHTML             = 'Válvula reguladora de pressão abrir-se-á'
+      set_ct = ct_user_answers[0]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn1_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn1_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn1_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn1_op4.checked = true
       break;
       
     case 2:
-      fill_question_header.innerHTML = '2. Segundo o CBA, uma ação por danos causados por aeronave a terceiros na superfície prescreve em:'
-      c_fill_1.innerHTML             = '1 Ano.'
-      c_fill_2.innerHTML             = '2 Anos.'
-      c_fill_3.innerHTML             = '3 Meses.'
-      c_fill_4.innerHTML             = '4 Meses.'
+      fill_question_header.innerHTML = '2. O motor aeronáutico que desenvolver 150 HP de potência e pesa 120 KG possui relação massa-potência equivalente a:'
+      c_fill_1.innerHTML             = '0,8 KG/HP.'
+      c_fill_2.innerHTML             = '8,0 KG/HP.'
+      c_fill_3.innerHTML             = '2,7 KG/HP.'
+      c_fill_4.innerHTML             = '27,0 KG/HP.'
+      set_ct = ct_user_answers[1]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn2_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn2_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn2_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn2_op4.checked = true
       break;
       
     case 3:
-       fill_question_header.innerHTML = '3. Em um aeródromo cuja elevação seja de 1500FT, o circuito de tráfego padrão para aeronaves a hélice será efetuado a uma altura de:'
-      c_fill_1.innerHTML             = '1000FT.'
-      c_fill_2.innerHTML             = '1500FT.'
-      c_fill_3.innerHTML             = '2000FT.'
-      c_fill_4.innerHTML             = '2500FT.'
+      fill_question_header.innerHTML = '3. Os passos da hélice que proporconam redução do arrasto da hélice quando o motor é cortado em voo e redução da distância percorrida durante o pouso são denominados, respectivamente:'
+      c_fill_1.innerHTML             = 'Mínimo e máximo.'
+      c_fill_2.innerHTML             = 'Máximo e reverso.'
+      c_fill_3.innerHTML             = 'Mínimo e bandeira.'
+      c_fill_4.innerHTML             = 'Bandeira e reverso.'
+      set_ct = ct_user_answers[2]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn3_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn3_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn3_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn3_op4.checked = true
       break; 
       
     case 4:
-      fill_question_header.innerHTML = '4. Conforme a NSCA 3-2/2008, participar, apoiar e acompanhar as atividades de prevenção de incidentes e acidentes aeronáuticos no âmbito da aviação civil é atribuição da(o):'
-      c_fill_1.innerHTML             = 'Elo-SIPAER.'
-      c_fill_2.innerHTML             = 'Estado-Maior da aeronáutica.'
-      c_fill_3.innerHTML             = 'Divisão de divulgação operacional do SIPAER.'
-      c_fill_4.innerHTML             = 'Gerência Geral de Investigação e Prevenção da ANAC.'
-      break; 
+      fill_question_header.innerHTML = '4. Os tacômetros mecânicos tem o seu princípio de funcionamento baseado na:'
+      c_fill_1.innerHTML             = 'Força centrípeta.'
+      c_fill_2.innerHTML             = 'Força centrífuga.'
+      c_fill_3.innerHTML             = 'Rigidez giroscópica.'
+      c_fill_4.innerHTML             = 'Precessão giroscópica.'
+      set_ct = ct_user_answers[3]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn4_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn4_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn4_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn4_op4.checked = true
+      break;
       
     case 5:
-      fill_question_header.innerHTML = '5. Para que uma ACFT possa penetrar em áreas restritas deverá se ajustar as restrições ou, então, obter autorização através do(a):'
-      c_fill_1.innerHTML             = 'GER.'
-      c_fill_2.innerHTML             = 'SRPV.'
-      c_fill_3.innerHTML             = 'ANAC.'
-      c_fill_4.innerHTML             = 'DECEA.'
+      fill_question_header.innerHTML = '5. A finalidade da boia nos carburadores é de:'
+      c_fill_1.innerHTML             = 'Acionar o pulverizador através da borboleta.'
+      c_fill_2.innerHTML             = 'Manter constante o nível de gasolina na cuba.'
+      c_fill_3.innerHTML             = 'Acionar o giclê para a passagem da gasolina.'
+      c_fill_4.innerHTML             = 'Compensar a mistura em função da variação da altitude.'
+      set_ct = ct_user_answers[4]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn5_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn5_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn5_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn5_op4.checked = true
       break;  
 
     case 6:
-      fill_question_header.innerHTML = '6. No plano de voo o valor declarado como velocidade de cruzeiro refere-se a:'
-      c_fill_1.innerHTML             = 'VA.'
-      c_fill_2.innerHTML             = 'VC.'
-      c_fill_3.innerHTML             = 'VI.'
-      c_fill_4.innerHTML             = 'VS.'
+      fill_question_header.innerHTML = '6. Dentre os instrumentos abaixo, indique aqueles que pertencem ao sistema de navegação:'
+      c_fill_1.innerHTML             = 'Velocímetro e altímetro.'
+      c_fill_2.innerHTML             = 'Altímetro e cronômetro.'
+      c_fill_3.innerHTML             = 'Velocímetro e bússola.'
+      c_fill_4.innerHTML             = 'Cronômetro e bússola.'
+      set_ct = ct_user_answers[5]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn6_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn6_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn6_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn6_op4.checked = true
       break;
         
     case 7: 
-      fill_question_header.innerHTML = '7. Nos voos em condições visuais, a responsabilidade de se evitar abalroamento entre aeronaves no circuito é do:'
-      c_fill_1.innerHTML             = 'Instrutor de voo.'
-      c_fill_2.innerHTML             = 'Piloto de aeronave.'
-      c_fill_3.innerHTML             = 'Controlador de voo.'
-      c_fill_4.innerHTML             = 'Operador do controle.'
+      fill_question_header.innerHTML = '7. Em um motor convencional a quatro tempos, se a válvula de escapamento estiver aberta e válvula de admissão fechada, o pistão estará teoricamente no tempo de:'
+      c_fill_1.innerHTML             = 'Admissão.'
+      c_fill_2.innerHTML             = 'Expansão.'
+      c_fill_3.innerHTML             = 'Compressão.'
+      c_fill_4.innerHTML             = 'Escapamento.'
+      set_ct = ct_user_answers[6]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn7_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn7_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn7_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn7_op4.checked = true
       break;
         
     case 8:
-      fill_question_header.innerHTML = '8. O plano de voo pode ser preenchido e assinado pelo(s):'
-      c_fill_1.innerHTML             = 'Pilotos somente.'
-      c_fill_2.innerHTML             = 'Tripulantes de qualquer aeronave.'
-      c_fill_3.innerHTML             = 'Comandantes das aeronaves somente.'
-      c_fill_4.innerHTML             = 'Pilotos e despachantes operacionais de voo.'
+      fill_question_header.innerHTML = '8. O dispositivo que impede a corrente da bateria de fluir no sentido do gerador denomina-se:'
+      c_fill_1.innerHTML             = 'Alternador.'
+      c_fill_2.innerHTML             = 'Transformador.'
+      c_fill_3.innerHTML             = 'Regulador de voltagem.'
+      c_fill_4.innerHTML             = 'Relé de corrente reversa.'
+      set_ct = ct_user_answers[7]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn8_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn8_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn8_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn8_op4.checked = true
       break; 
         
     case 9:
-      fill_question_header.innerHTML = '9. É compulsória a apresentação do plano de voo antes de realizar voo VFR:'
-      c_fill_1.innerHTML             = 'Especial.'
-      c_fill_2.innerHTML             = 'Dentro de ATZ.'
-      c_fill_3.innerHTML             = 'Através de limites interestaduais.'
-      c_fill_4.innerHTML             = 'Em rota, sempre que partir de aeródromo provido de orgão ATS.'
+      fill_question_header.innerHTML = '9. Os cabos de aço esticados em diagonais que suportam esforços de tração em uma asa são denominados:'
+      c_fill_1.innerHTML             = 'Nervuras.'
+      c_fill_2.innerHTML             = 'Tirantes.'
+      c_fill_3.innerHTML             = 'Montantes.'
+      c_fill_4.innerHTML             = 'Longarinas.'
+      set_ct = ct_user_answers[8]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn9_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn9_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn9_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn9_op4.checked = true
       break; 
         
     case 10:
-        fill_question_header.innerHTML = '10. A aeronave que pousar num AD controlado deve manter-se na escuta da TWR ou do controle de solo até:'
-      c_fill_1.innerHTML             = 'Livrar a pista em uso.'
-      c_fill_2.innerHTML             = 'Livra a pista de táxi.'
-      c_fill_3.innerHTML             = 'A parada total dos motores.'
-      c_fill_4.innerHTML             = 'Cumprir orientações do sinalizador.'
+      fill_question_header.innerHTML = '10. O componente do sistema de combustível que tem a finalidade de prover combustível para a bomba mecânica é o(a):'
+      c_fill_1.innerHTML             = 'Filtro.'
+      c_fill_2.innerHTML             = 'Bomba auxiliar.'
+      c_fill_3.innerHTML             = 'Válvula seletora.'
+      c_fill_4.innerHTML             = 'Sensor de baixo nível.'
+      set_ct = ct_user_answers[9]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn10_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn10_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn10_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn10_op4.checked = true
       break;  
 
     case 11:
-      fill_question_header.innerHTML = '11. Os elementos básicos do circuito de tráfego padrão são, sequencialmente:'
-      c_fill_1.innerHTML             = 'Perna do vento, perna contra o vento, curva base e reta final.'
-      c_fill_2.innerHTML             = 'Perna do vento, perna contra o vento, perna de través e reta final.'
-      c_fill_3.innerHTML             = 'Perna contra o vento, perna de través, perna do vento, perna base e reta final.'
-      c_fill_4.innerHTML             = 'Perna contra o vento, perna de través, perna do vento, curva base e reta final.'
+      fill_question_header.innerHTML = '11. O componente do motor que conecta o pistão ao eixo de manivelas denomina-se:'
+      c_fill_1.innerHTML             = 'Biela.'
+      c_fill_2.innerHTML             = 'Cárter.'
+      c_fill_3.innerHTML             = 'Anel de segmento.'
+      c_fill_4.innerHTML             = 'Válvula de admissão.'
+      set_ct = ct_user_answers[10]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn11_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn11_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn11_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn11_op4.checked = true
       break;
       
     case 12:
-      fill_question_header.innerHTML = '12. A designação dada à uma área perigosa de número 14 do terceiro COMAR é:'
-      c_fill_1.innerHTML             = 'SBR 143.'
-      c_fill_2.innerHTML             = 'SBP 314.'
-      c_fill_3.innerHTML             = 'SBD 314.'
-      c_fill_4.innerHTML             = 'SBR 341.'
+      fill_question_header.innerHTML = '12. Para o seu funcionamento, o tacômryto elétrico recebe: sinal de um:'
+      c_fill_1.innerHTML             = 'Gerador.'
+      c_fill_2.innerHTML             = 'Amperímetro.'
+      c_fill_3.innerHTML             = 'Contra-peso.'
+      c_fill_4.innerHTML             = 'Sensor de RPM.'
+      set_ct = ct_user_answers[11]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn12_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn12_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn12_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn12_op4.checked = true
       break;
       
     case 13:
-      fill_question_header.innerHTML = '13. Para que um aeródromo seja considerado aberto para operação VFR é necessário que o teto seja de ....... pés e que a visibilidade seja de ........:'
-      c_fill_1.innerHTML             = '1.000; 3.000.'
-      c_fill_2.innerHTML             = '1.500; 3.000.'
-      c_fill_3.innerHTML             = '1.500; 5.000.'
-      c_fill_4.innerHTML             = '2.000; 5.000.'
+      fill_question_header.innerHTML = '13. No modo de fixação das asas, o tipo cantilever tem as versões:'
+      c_fill_1.innerHTML             = 'Alta e média.'
+      c_fill_2.innerHTML             = 'Baixa e média.'
+      c_fill_3.innerHTML             = 'Alta e parassol.'
+      c_fill_4.innerHTML             = 'Baixa e parassol.'
+      set_ct = ct_user_answers[12]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn13_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn13_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn13_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn13_op4.checked = true
       break; 
       
     case 14:
-      fill_question_header.innerHTML = '14. As classes dos espaços aéreos ATS nos quais as ACFT com plano de VFR só poderão entrar e voar em TMA ou CTR, após autirzação do APP são:'
-      c_fill_1.innerHTML             = 'A,B ou C.'
-      c_fill_2.innerHTML             = 'B,C ou D.'
-      c_fill_3.innerHTML             = 'C,D ou F.'
-      c_fill_4.innerHTML             = 'D,F ou G.'
+      fill_question_header.innerHTML = '14. O esforço de compressão e o de tração atuando simultaneamente em uma estrutura produzem:'
+      c_fill_1.innerHTML             = 'Flexão.'
+      c_fill_2.innerHTML             = 'Tensão.'
+      c_fill_3.innerHTML             = 'Torção.'
+      c_fill_4.innerHTML             = 'Cizalhamento.'
+      set_ct = ct_user_answers[13]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn14_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn14_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn14_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn14_op4.checked = true
       break; 
       
     case 15:
-      fill_question_header.innerHTML = '15. Sabendo-se que um determinado AD possui a elevação de 2910FT, uma ACFT a reação realizando o circuito de tráfego padrão encontra-se a uma altura de:'
-      c_fill_1.innerHTML             = '1000FT.'
-      c_fill_2.innerHTML             = '1500FT.'
-      c_fill_3.innerHTML             = '3910FT.'
-      c_fill_4.innerHTML             = '4410FT.'
+      fill_question_header.innerHTML = '15. O sistema de lubrificação do motor em que o próprio cárter serve de reservatório de oléo é do tipo:'
+      c_fill_1.innerHTML             = 'Seco.'
+      c_fill_2.innerHTML             = 'Úmido.'
+      c_fill_3.innerHTML             = 'Misto.'
+      c_fill_4.innerHTML             = 'Molhado.'
+      set_ct = ct_user_answers[14]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn15_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn15_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn15_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn15_op4.checked = true
       break;  
 
     case 16:
-      fill_question_header.innerHTML = '16. No que diz respeito ao nível de transição, dentre as alternativas baixo pode-se afirmar que quanto:'
-      c_fill_1.innerHTML             = 'Menor o QNH, maior o nível de transição.'
-      c_fill_2.innerHTML             = 'Maior o QNE, maior o nível de transição.'
-      c_fill_3.innerHTML             = 'Maior o QNH, maior o nível de transição.'
-      c_fill_4.innerHTML             = 'Menor o QNE, maior o nível de transição.'
+      fill_question_header.innerHTML = '16. Na bateria do tipo chumbo-ácida as placas de chumbo são mergulhadas numa solução de:'
+      c_fill_1.innerHTML             = 'Metanol.'
+      c_fill_2.innerHTML             = 'Querosene.'
+      c_fill_3.innerHTML             = 'Água destilada.'
+      c_fill_4.innerHTML             = 'Ácido sulfúrico.'
+      set_ct = ct_user_answers[15]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn16_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn16_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn16_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn16_op4.checked = true
       break;
         
     case 17:
-      fill_question_header.innerHTML = '17. Dentre as alternativas abaixo, em que situação poderá uma aeronave civil pousar em um aeródromo militar:'
-      c_fill_1.innerHTML             = 'Em voo de treinamento.'
-      c_fill_2.innerHTML             = 'Em situação de emergência.'
-      c_fill_3.innerHTML             = 'Quando quiser pois não há restrições.'
-      c_fill_4.innerHTML             = 'Poderá pousar quando quiser desde que não embarque passageiros.'
+      fill_question_header.innerHTML = '17. A posição atingida pelo pistão que acarreta um volume máximo no interior do cilindro denomina-se:'
+      c_fill_1.innerHTML             = 'Ponto morto alto.'
+      c_fill_2.innerHTML             = 'Ponto morto baixo.'
+      c_fill_3.innerHTML             = 'Câmara de combustão.'
+      c_fill_4.innerHTML             = 'Câmara de compressão.'
+      set_ct = ct_user_answers[16]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn17_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn17_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn17_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn17_op4.checked = true
       break;
         
     case 18:
-      fill_question_header.innerHTML = '18. A sigla "SBD", na identificação de um espaço aéreo condicionado indica que é uma área:'
-      c_fill_1.innerHTML             = 'Perigosa, cujo sobrevoo é proibido.'
-      c_fill_2.innerHTML             = 'Na qual o voo de aeronaves é proibido.'
-      c_fill_3.innerHTML             = 'Perigosa, na qual pode existir perigo para a aeronave que a sobrevoar.'
-      c_fill_4.innerHTML             = 'Restrita, cujo sobrevoo so podera ser realizado de acordo com as condições preestabelecidas.'
+      fill_question_header.innerHTML = '18. A capacidade que um motor possui de ter partidas satisfatórias em baixas temperaturas é devido ao combustível possuir:'
+      c_fill_1.innerHTML             = 'Alta densidade.'
+      c_fill_2.innerHTML             = 'Baixa densidade.'
+      c_fill_3.innerHTML             = 'Alta volatilidade.'
+      c_fill_4.innerHTML             = 'Baixa volatilidade.'
+      set_ct = ct_user_answers[17]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn18_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn18_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn18_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn18_op4.checked = true
       break; 
         
     case 19:
-      fill_question_header.innerHTML = '19. No caso de pouso forçado, a autoridade do comandante persiste:'
-      c_fill_1.innerHTML             = 'Indefinidamente.'
-      c_fill_2.innerHTML             = 'Até o corte dos motores.'
-      c_fill_3.innerHTML             = 'Até o desembarque do último passageiro.'
-      c_fill_4.innerHTML             = 'Até que as autoridades competentes assumam a resposabilidade.'
+      fill_question_header.innerHTML = '19. Nos motores convencionais superalimentados o turbocompressor é acionado:'
+      c_fill_1.innerHTML             = 'Pelo eixo do motor.'
+      c_fill_2.innerHTML             = 'Pelo motor elétrico.'
+      c_fill_3.innerHTML             = 'Por meio de difusores.'
+      c_fill_4.innerHTML             = 'Por gases de escapamento.'
+      set_ct = ct_user_answers[18]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn19_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn19_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn19_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn19_op4.checked = true
       break; 
         
     case 20:
-      fill_question_header.innerHTML = '20. Os aeródromos são classificados em:'
-      c_fill_1.innerHTML             = 'Civis e públicos.'
-      c_fill_2.innerHTML             = 'Civis e privados.'
-      c_fill_3.innerHTML             = 'Civis e militares.'
-      c_fill_4.innerHTML             = 'Públicos e privados.'
+      fill_question_header.innerHTML = '20. A estabilidade lateral de uma aeronave é principalmente obtida em função da existência do(a):'
+      c_fill_1.innerHTML             = 'Leme de direção.'
+      c_fill_2.innerHTML             = 'leme de profundidade.'
+      c_fill_3.innerHTML             = 'Estabilizador vertical.'
+      c_fill_4.innerHTML             = 'Estabilizador horizontal.'
+      set_ct = ct_user_answers[19]
+      if ( set_ct.indexOf("op1") != -1 ){
+        btn20_op1.checked = true
+      }
+      if ( set_ct.indexOf("op2") != -1 )
+        btn20_op2.checked = true
+    
+      if ( set_ct.indexOf("op3") != -1 )
+        btn20_op3.checked = true
+    
+      if ( set_ct.indexOf("op4") != -1 )
+        btn20_op4.checked = true
       break;  
 
     default:
@@ -1702,165 +2065,420 @@ function ct_call(question_btn){
 
 //TV QUESTIONS
 function tv_call(question_btn){
+  c_op1.checked = false
+  c_op2.checked = false
+  c_op3.checked = false
+  c_op4.checked = false
+  button_that_clicked = window.event.target.id
+  c_op1.setAttribute('id', `${button_that_clicked}_op1`)
+  c_op2.setAttribute('id', `${button_that_clicked}_op2`)
+  c_op3.setAttribute('id', `${button_that_clicked}_op3`)
+  c_op4.setAttribute('id', `${button_that_clicked}_op4`)
+
+  c_op1.setAttribute('oninput', `tv_question_check()`)
+  c_op2.setAttribute('oninput', `tv_question_check()`)
+  c_op3.setAttribute('oninput', `tv_question_check()`)
+  c_op4.setAttribute('oninput', `tv_question_check()`)
+  var set_tv
   switch (question_btn){
     case 1:
-      fill_question_header.innerHTML = 'DEU CERTOOO'
-      c_fill_1.innerHTML             = 'Gerais.'
-      c_fill_2.innerHTML             = 'Específicas.'
-      c_fill_3.innerHTML             = 'De voo visual.'
-      c_fill_4.innerHTML             = 'De voo por instrumentos.'
+      fill_question_header.innerHTML = '1. Quanto a desidade do ar, pode-se afirmar que:'
+      c_fill_1.innerHTML             = 'Aumenta, com o aumento da altitude.'
+      c_fill_2.innerHTML             = 'Diminui, com a diminuição da altitude.'
+      c_fill_3.innerHTML             = 'Aumenta, com o aumento da temperatura'
+      c_fill_4.innerHTML             = 'Diminui, com o aumento da temperatura.'
+      set_tv = tv_user_answers[0]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn1_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn1_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn1_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn1_op4.checked = true
       break;
       
     case 2:
-      fill_question_header.innerHTML = '2. Segundo o CBA, uma ação por danos causados por aeronave a terceiros na superfície prescreve em:'
-      c_fill_1.innerHTML             = '1 Ano.'
-      c_fill_2.innerHTML             = '2 Anos.'
-      c_fill_3.innerHTML             = '3 Meses.'
-      c_fill_4.innerHTML             = '4 Meses.'
+      fill_question_header.innerHTML = '2. O ângulo de ataque no qual o aerofólio "não" produz sustentação é negativo no perfil:'
+      c_fill_1.innerHTML             = 'Assimétrico e nulo no perfil simétrico.'
+      c_fill_2.innerHTML             = 'Simétrico e nulo no perfil assimétrico.'
+      c_fill_3.innerHTML             = 'Simétrico e positivo no perfil assimétrico.'
+      c_fill_4.innerHTML             = 'Assimétrico e positivo no perfil simétrico.'
+      set_tv = tv_user_answers[1]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn2_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn2_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn2_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn2_op4.checked = true
       break;
       
     case 3:
-       fill_question_header.innerHTML = '3. Em um aeródromo cuja elevação seja de 1500FT, o circuito de tráfego padrão para aeronaves a hélice será efetuado a uma altura de:'
-      c_fill_1.innerHTML             = '1000FT.'
-      c_fill_2.innerHTML             = '1500FT.'
-      c_fill_3.innerHTML             = '2000FT.'
-      c_fill_4.innerHTML             = '2500FT.'
+       fill_question_header.innerHTML = '3. Diz-se que uma aeronave encontra-se no seu teto prático quando ainda tem capacidade de manter uma razão de subida máxima de:'
+      c_fill_1.innerHTML             = '20FT/MIN.'
+      c_fill_2.innerHTML             = '50FT/MIN.'
+      c_fill_3.innerHTML             = '100FT/MIN.'
+      c_fill_4.innerHTML             = '150FT/MIN.'
+      set_tv = tv_user_answers[2]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn3_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn3_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn3_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn3_op4.checked = true
       break; 
       
     case 4:
-      fill_question_header.innerHTML = '4. Conforme a NSCA 3-2/2008, participar, apoiar e acompanhar as atividades de prevenção de incidentes e acidentes aeronáuticos no âmbito da aviação civil é atribuição da(o):'
-      c_fill_1.innerHTML             = 'Elo-SIPAER.'
-      c_fill_2.innerHTML             = 'Estado-Maior da aeronáutica.'
-      c_fill_3.innerHTML             = 'Divisão de divulgação operacional do SIPAER.'
-      c_fill_4.innerHTML             = 'Gerência Geral de Investigação e Prevenção da ANAC.'
+      fill_question_header.innerHTML = '4. Para recuperar o controle de um avião que entrou em parafuso o procedimento a ser realizado é:'
+      c_fill_1.innerHTML             = 'Baixar todo o flap.'
+      c_fill_2.innerHTML             = 'Recolher todo o flap.'
+      c_fill_3.innerHTML             = 'Recolher o trem de pouso.'
+      c_fill_4.innerHTML             = 'Pressionar o pedal para o lado contrário ao da rotação.'
+      set_tv = tv_user_answers[3]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn4_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn4_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn4_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn4_op4.checked = true
       break; 
       
     case 5:
-      fill_question_header.innerHTML = '5. Para que uma ACFT possa penetrar em áreas restritas deverá se ajustar as restrições ou, então, obter autorização através do(a):'
-      c_fill_1.innerHTML             = 'GER.'
-      c_fill_2.innerHTML             = 'SRPV.'
-      c_fill_3.innerHTML             = 'ANAC.'
-      c_fill_4.innerHTML             = 'DECEA.'
+      fill_question_header.innerHTML = '5. Para que uma aeronave voe com baixa velocidade são necessários:'
+      c_fill_1.innerHTML             = 'Pequeno ângulo de ataque e aumento de potência.'
+      c_fill_2.innerHTML             = 'Pequeno ângulo de ataque e redução de potência.'
+      c_fill_3.innerHTML             = 'Grande ângulo de ataque e redução de potência.'
+      c_fill_4.innerHTML             = 'Grande ângulo de ataque e aumento de potência.'
+      set_tv = tv_user_answers[4]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn5_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn5_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn5_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn5_op4.checked = true
       break;  
 
     case 6:
-      fill_question_header.innerHTML = '6. No plano de voo o valor declarado como velocidade de cruzeiro refere-se a:'
-      c_fill_1.innerHTML             = 'VA.'
-      c_fill_2.innerHTML             = 'VC.'
-      c_fill_3.innerHTML             = 'VI.'
-      c_fill_4.innerHTML             = 'VS.'
+      fill_question_header.innerHTML = '6. Estando a corda do aerofólio abaixo da linha dos filetes de ar do vento relativo, o ângulo formado denomina-se ângulo de:'
+      c_fill_1.innerHTML             = 'Ataque nulo.'
+      c_fill_2.innerHTML             = 'Atitude nulo.'
+      c_fill_3.innerHTML             = 'Ataque negativo.'
+      c_fill_4.innerHTML             = 'Atitude positivo.'
+      set_tv = tv_user_answers[5]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn6_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn6_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn6_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn6_op4.checked = true
       break;
         
     case 7: 
-      fill_question_header.innerHTML = '7. Nos voos em condições visuais, a responsabilidade de se evitar abalroamento entre aeronaves no circuito é do:'
-      c_fill_1.innerHTML             = 'Instrutor de voo.'
-      c_fill_2.innerHTML             = 'Piloto de aeronave.'
-      c_fill_3.innerHTML             = 'Controlador de voo.'
-      c_fill_4.innerHTML             = 'Operador do controle.'
+      fill_question_header.innerHTML = '7. Dentre as alternativas abaixo, os fatores que melhoram as condições de decolagem, diminuindo a distância de corrida na pista são:'
+      c_fill_1.innerHTML             = 'Baixa altitude, ar seco e vento de proa.'
+      c_fill_2.innerHTML             = 'Baixa altitude, vento de cauda e ar seco.'
+      c_fill_3.innerHTML             = 'Vento de proa, ar úmido e grande altitude.'
+      c_fill_4.innerHTML             = 'Vento de cauda, ar úmido e grande altitude.'
+      set_tv = tv_user_answers[6]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn7_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn7_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn7_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn7_op4.checked = true
       break;
         
     case 8:
-      fill_question_header.innerHTML = '8. O plano de voo pode ser preenchido e assinado pelo(s):'
-      c_fill_1.innerHTML             = 'Pilotos somente.'
-      c_fill_2.innerHTML             = 'Tripulantes de qualquer aeronave.'
-      c_fill_3.innerHTML             = 'Comandantes das aeronaves somente.'
-      c_fill_4.innerHTML             = 'Pilotos e despachantes operacionais de voo.'
+      fill_question_header.innerHTML = '8. Dentre as alternativas abaixo, é correto afirmar que a aeronave estolará quando houver:'
+      c_fill_1.innerHTML             = 'Aumento da velocidade aerodinâmica.'
+      c_fill_2.innerHTML             = 'Aumento do peso máximo de decolagem.'
+      c_fill_3.innerHTML             = 'Perda de sustentaçâo e aumento de arrasto.'
+      c_fill_4.innerHTML             = 'Diminuição da velocidade em relação ao solo.'
+      set_tv = tv_user_answers[7]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn8_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn8_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn8_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn8_op4.checked = true
       break; 
         
     case 9:
-      fill_question_header.innerHTML = '9. É compulsória a apresentação do plano de voo antes de realizar voo VFR:'
-      c_fill_1.innerHTML             = 'Especial.'
-      c_fill_2.innerHTML             = 'Dentro de ATZ.'
-      c_fill_3.innerHTML             = 'Através de limites interestaduais.'
-      c_fill_4.innerHTML             = 'Em rota, sempre que partir de aeródromo provido de orgão ATS.'
+      fill_question_header.innerHTML = '9. Comandando-se o pedal para qualquer dos lados com pouca inclinação da asa poderá ocorrer um(a):'
+      c_fill_1.innerHTML             = 'Derrapagem.'
+      c_fill_2.innerHTML             = 'Enflechamento.'
+      c_fill_3.innerHTML             = 'Efeito de quilha.'
+      c_fill_4.innerHTML             = 'Parafuso acidental.'
+      set_tv = tv_user_answers[8]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn9_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn9_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn9_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn9_op4.checked = true
       break; 
         
     case 10:
-        fill_question_header.innerHTML = '10. A aeronave que pousar num AD controlado deve manter-se na escuta da TWR ou do controle de solo até:'
-      c_fill_1.innerHTML             = 'Livrar a pista em uso.'
-      c_fill_2.innerHTML             = 'Livra a pista de táxi.'
-      c_fill_3.innerHTML             = 'A parada total dos motores.'
-      c_fill_4.innerHTML             = 'Cumprir orientações do sinalizador.'
+      fill_question_header.innerHTML = '10. Ao se pressionar um dos pedais do leme de direção numa curva, sem antes inclinar as asas, poderá ocorrer uma:'
+      c_fill_1.innerHTML             = 'Guinada.'
+      c_fill_2.innerHTML             = 'Bancagem.'
+      c_fill_3.innerHTML             = 'Glissada.'
+      c_fill_4.innerHTML             = 'Derrapagem.'
+      set_tv = tv_user_answers[9]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn10_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn10_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn10_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn10_op4.checked = true
       break;  
 
     case 11:
-      fill_question_header.innerHTML = '11. Os elementos básicos do circuito de tráfego padrão são, sequencialmente:'
-      c_fill_1.innerHTML             = 'Perna do vento, perna contra o vento, curva base e reta final.'
-      c_fill_2.innerHTML             = 'Perna do vento, perna contra o vento, perna de través e reta final.'
-      c_fill_3.innerHTML             = 'Perna contra o vento, perna de través, perna do vento, perna base e reta final.'
-      c_fill_4.innerHTML             = 'Perna contra o vento, perna de través, perna do vento, curva base e reta final.'
+      fill_question_header.innerHTML = '11. Considerem-se duas aeronaves do mesmo tipo, uma voando ao nível do mar e outra a 8000 FT, neste caso, a que está voando a(ao):'
+      c_fill_1.innerHTML             = '8000 FT tem maior velocidade porque o ar é denso.'
+      c_fill_2.innerHTML             = '8000 FT tem menor velocidade porque o ar é rarefeito.'
+      c_fill_3.innerHTML             = 'Nível do mar tem menor velocidade porque o ar é denso.'
+      c_fill_4.innerHTML             = 'Nível do mar tem maior velocidade porque o ar é rarefeito.'
+      set_tv = tv_user_answers[10]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn11_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn11_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn11_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn11_op4.checked = true
       break;
       
     case 12:
-      fill_question_header.innerHTML = '12. A designação dada à uma área perigosa de número 14 do terceiro COMAR é:'
-      c_fill_1.innerHTML             = 'SBR 143.'
-      c_fill_2.innerHTML             = 'SBP 314.'
-      c_fill_3.innerHTML             = 'SBD 314.'
-      c_fill_4.innerHTML             = 'SBR 341.'
+      fill_question_header.innerHTML = '12. Em voo reto e nivelado, para se aumentar a velocidade, a:'
+      c_fill_1.innerHTML             = 'Tração deve ser igual ao arrasto.'
+      c_fill_2.innerHTML             = 'Tração deve ser maior que o arrasto.'
+      c_fill_3.innerHTML             = 'Sustentação deve ser igual ao arrasto.'
+      c_fill_4.innerHTML             = 'Sustentação deve ser menor que o arrasto.'
+      set_tv = tv_user_answers[11]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn12_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn12_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn12_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn12_op4.checked = true
       break;
       
     case 13:
-      fill_question_header.innerHTML = '13. Para que um aeródromo seja considerado aberto para operação VFR é necessário que o teto seja de ....... pés e que a visibilidade seja de ........:'
-      c_fill_1.innerHTML             = '1.000; 3.000.'
-      c_fill_2.innerHTML             = '1.500; 3.000.'
-      c_fill_3.innerHTML             = '1.500; 5.000.'
-      c_fill_4.innerHTML             = '2.000; 5.000.'
+      fill_question_header.innerHTML = '13. As superfícies de comando das aeronaves proporcionam movimentos realizados em torno dos eixos imaginários, que se cruzam num ponto denominado centro de:'
+      c_fill_1.innerHTML             = 'Pressão.'
+      c_fill_2.innerHTML             = 'Arrasto.'
+      c_fill_3.innerHTML             = 'Gravidade.'
+      c_fill_4.innerHTML             = 'Turbulência.'
+      set_tv = tv_user_answers[12]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn13_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn13_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn13_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn13_op4.checked = true
       break; 
       
     case 14:
-      fill_question_header.innerHTML = '14. As classes dos espaços aéreos ATS nos quais as ACFT com plano de VFR só poderão entrar e voar em TMA ou CTR, após autirzação do APP são:'
-      c_fill_1.innerHTML             = 'A,B ou C.'
-      c_fill_2.innerHTML             = 'B,C ou D.'
-      c_fill_3.innerHTML             = 'C,D ou F.'
-      c_fill_4.innerHTML             = 'D,F ou G.'
+      fill_question_header.innerHTML = '14. O principal fator de sustentação é devido ao princípio de:'
+      c_fill_1.innerHTML             = 'Pitot.'
+      c_fill_2.innerHTML             = 'Venturi.'
+      c_fill_3.innerHTML             = 'Coriólis.'
+      c_fill_4.innerHTML             = 'Bernoulli.'
+      set_tv = tv_user_answers[13]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn14_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn14_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn14_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn14_op4.checked = true
       break; 
       
     case 15:
-      fill_question_header.innerHTML = '15. Sabendo-se que um determinado AD possui a elevação de 2910FT, uma ACFT a reação realizando o circuito de tráfego padrão encontra-se a uma altura de:'
-      c_fill_1.innerHTML             = '1000FT.'
-      c_fill_2.innerHTML             = '1500FT.'
-      c_fill_3.innerHTML             = '3910FT.'
-      c_fill_4.innerHTML             = '4410FT.'
+      fill_question_header.innerHTML = '15. O arrasto gerado pela própria sustentação é conhecido como arrasto:'
+      c_fill_1.innerHTML             = 'Induzido.'
+      c_fill_2.innerHTML             = 'Parasita.'
+      c_fill_3.innerHTML             = 'Superficial.'
+      c_fill_4.innerHTML             = 'Da camada limite.'
+      set_tv = tv_user_answers[14]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn15_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn15_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn15_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn15_op4.checked = true
       break;  
 
     case 16:
-      fill_question_header.innerHTML = '16. No que diz respeito ao nível de transição, dentre as alternativas baixo pode-se afirmar que quanto:'
-      c_fill_1.innerHTML             = 'Menor o QNH, maior o nível de transição.'
-      c_fill_2.innerHTML             = 'Maior o QNE, maior o nível de transição.'
-      c_fill_3.innerHTML             = 'Maior o QNH, maior o nível de transição.'
-      c_fill_4.innerHTML             = 'Menor o QNE, maior o nível de transição.'
+      fill_question_header.innerHTML = '16. O teorema de Bernoulli foi demonstrado no tubo:'
+      c_fill_1.innerHTML             = 'Vernier.'
+      c_fill_2.innerHTML             = 'Simétrico.'
+      c_fill_3.innerHTML             = 'Superficial.'
+      c_fill_4.innerHTML             = 'Da camada limite.'
+      set_tv = tv_user_answers[15]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn16_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn16_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn16_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn16_op4.checked = true
       break;
         
     case 17:
-      fill_question_header.innerHTML = '17. Dentre as alternativas abaixo, em que situação poderá uma aeronave civil pousar em um aeródromo militar:'
-      c_fill_1.innerHTML             = 'Em voo de treinamento.'
-      c_fill_2.innerHTML             = 'Em situação de emergência.'
-      c_fill_3.innerHTML             = 'Quando quiser pois não há restrições.'
-      c_fill_4.innerHTML             = 'Poderá pousar quando quiser desde que não embarque passageiros.'
+      fill_question_header.innerHTML = '17. A trajetória de voo tem o sentido oposto do(a):'
+      c_fill_1.innerHTML             = 'Corda da asa.'
+      c_fill_2.innerHTML             = 'Vento relativo.'
+      c_fill_3.innerHTML             = 'Proa da aeronave.'
+      c_fill_4.innerHTML             = 'Ângulo de ataque das asas.'
+      set_tv = tv_user_answers[16]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn17_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn17_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn17_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn17_op4.checked = true
       break;
         
     case 18:
-      fill_question_header.innerHTML = '18. A sigla "SBD", na identificação de um espaço aéreo condicionado indica que é uma área:'
-      c_fill_1.innerHTML             = 'Perigosa, cujo sobrevoo é proibido.'
-      c_fill_2.innerHTML             = 'Na qual o voo de aeronaves é proibido.'
-      c_fill_3.innerHTML             = 'Perigosa, na qual pode existir perigo para a aeronave que a sobrevoar.'
-      c_fill_4.innerHTML             = 'Restrita, cujo sobrevoo so podera ser realizado de acordo com as condições preestabelecidas.'
+      fill_question_header.innerHTML = '18. Segundo a lei dos fases, aumentando-se a pressão de uma gás, a:'
+      c_fill_1.innerHTML             = 'Temperatura e a densidade diminuirão.'
+      c_fill_2.innerHTML             = 'Temperatura e a densidade aumentarão.'
+      c_fill_3.innerHTML             = 'Densidade diminuirá e a temperatura aumentará.'
+      c_fill_4.innerHTML             = 'Densidade aumentará e a temperatura diminuirá.'
+      set_tv = tv_user_answers[17]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn18_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn18_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn18_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn18_op4.checked = true
       break; 
         
     case 19:
-      fill_question_header.innerHTML = '19. No caso de pouso forçado, a autoridade do comandante persiste:'
-      c_fill_1.innerHTML             = 'Indefinidamente.'
-      c_fill_2.innerHTML             = 'Até o corte dos motores.'
-      c_fill_3.innerHTML             = 'Até o desembarque do último passageiro.'
-      c_fill_4.innerHTML             = 'Até que as autoridades competentes assumam a resposabilidade.'
+      fill_question_header.innerHTML = '19. Aumentando-se o ângulo de ataque além do correspondente ao coeficiente de sustentação máximo, ocorrerá um(a):'
+      c_fill_1.innerHTML             = 'Queda brusca na sustentação e uma diminuição do arrasto.'
+      c_fill_2.innerHTML             = 'Aumento brusco na sustentação e uma diminuição do arrasto.'
+      c_fill_3.innerHTML             = 'Queda na sustentação e um grande aumento do arrasto.'
+      c_fill_4.innerHTML             = 'Aumento brusco na sustentação e um grande aumento do arrasto.'
+      set_tv = tv_user_answers[18]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn19_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn19_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn19_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn19_op4.checked = true
       break; 
         
     case 20:
-      fill_question_header.innerHTML = '20. Os aeródromos são classificados em:'
-      c_fill_1.innerHTML             = 'Civis e públicos.'
-      c_fill_2.innerHTML             = 'Civis e privados.'
-      c_fill_3.innerHTML             = 'Civis e militares.'
-      c_fill_4.innerHTML             = 'Públicos e privados.'
+      fill_question_header.innerHTML = '20. A linha média imaginárioa que une o bordo de ataque ao bordo de fuga denomina-se:'
+      c_fill_1.innerHTML             = 'Corda.'
+      c_fill_2.innerHTML             = 'Envergadura.'
+      c_fill_3.innerHTML             = 'Alongamento.'
+      c_fill_4.innerHTML             = 'Linha de curvatura média.'
+      set_tv = tv_user_answers[19]
+      if ( set_tv.indexOf("op1") != -1 ){
+        btn20_op1.checked = true
+      }
+      if ( set_tv.indexOf("op2") != -1 )
+        btn20_op2.checked = true
+    
+      if ( set_tv.indexOf("op3") != -1 )
+        btn20_op3.checked = true
+    
+      if ( set_tv.indexOf("op4") != -1 )
+        btn20_op4.checked = true
       break;  
 
     default:
@@ -2060,6 +2678,132 @@ function met_question_check(){
     met_user_answers.splice(19, 1, radio_that_called) 
 } 
 
+function ct_question_check(){
+  radio_that_called = window.event.target.id
+  if ( radio_that_called.indexOf("btn1_") != -1 ){
+    ct_user_answers.splice(0, 1, radio_that_called)
+  }
+  if ( radio_that_called.indexOf("btn2_") != -1 )
+    ct_user_answers.splice(1, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn3_") != -1 )
+    ct_user_answers.splice(2, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn4_") != -1 )
+    ct_user_answers.splice(3, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn5_") != -1 )
+    ct_user_answers.splice(4, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn6_") != -1 )
+    ct_user_answers.splice(5, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn7_") != -1 )
+    ct_user_answers.splice(6, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn8_") != -1 )
+    ct_user_answers.splice(7, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn9_") != -1 )
+    ct_user_answers.splice(8, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn10_") != -1 )
+    ct_user_answers.splice(9, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn11_") != -1 )
+    ct_user_answers.splice(10, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn12_") != -1 )
+    ct_user_answers.splice(11, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn13_") != -1 )
+    ct_user_answers.splice(12, 1, radio_that_called) 
+    
+  if ( radio_that_called.indexOf("btn14_") != -1 )
+    ct_user_answers.splice(13, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn15_") != -1 )
+    ct_user_answers.splice(14, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn16_") != -1 )
+    ct_user_answers.splice(15, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn17_") != -1 )
+    ct_user_answers.splice(16, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn18_") != -1 )
+    ct_user_answers.splice(17, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn19_") != -1 )
+    ct_user_answers.splice(18, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn20_") != -1 )
+    ct_user_answers.splice(19, 1, radio_that_called) 
+} 
+
+function tv_question_check(){
+  radio_that_called = window.event.target.id
+  if ( radio_that_called.indexOf("btn1_") != -1 ){
+    tv_user_answers.splice(0, 1, radio_that_called)
+  }
+  if ( radio_that_called.indexOf("btn2_") != -1 )
+    tv_user_answers.splice(1, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn3_") != -1 )
+    tv_user_answers.splice(2, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn4_") != -1 )
+    tv_user_answers.splice(3, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn5_") != -1 )
+    tv_user_answers.splice(4, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn6_") != -1 )
+    tv_user_answers.splice(5, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn7_") != -1 )
+    tv_user_answers.splice(6, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn8_") != -1 )
+    tv_user_answers.splice(7, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn9_") != -1 )
+    tv_user_answers.splice(8, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn10_") != -1 )
+    tv_user_answers.splice(9, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn11_") != -1 )
+    tv_user_answers.splice(10, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn12_") != -1 )
+    tv_user_answers.splice(11, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn13_") != -1 )
+    tv_user_answers.splice(12, 1, radio_that_called) 
+    
+  if ( radio_that_called.indexOf("btn14_") != -1 )
+    tv_user_answers.splice(13, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn15_") != -1 )
+    tv_user_answers.splice(14, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn16_") != -1 )
+    tv_user_answers.splice(15, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn17_") != -1 )
+    tv_user_answers.splice(16, 1, radio_that_called)
+
+  if ( radio_that_called.indexOf("btn18_") != -1 )
+    tv_user_answers.splice(17, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn19_") != -1 )
+    tv_user_answers.splice(18, 1, radio_that_called) 
+
+  if ( radio_that_called.indexOf("btn20_") != -1 )
+    tv_user_answers.splice(19, 1, radio_that_called) 
+} 
+
 
 
 function finish(){
@@ -2096,10 +2840,34 @@ function finish(){
     }
   }
 
-  //CREATE TABLE
+  let ct_final_correct = 0
+  let ct_final_wrong   = 20
+  let ct_final_table = [ '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' ]
+  for ( x=0 ; x<20 ; x++){
+    if ( ct_answers.indexOf(ct_user_answers[x]) != -1 ){
+      ct_final_correct++
+      ct_final_wrong--
+      ct_final_table[x] = 1
+    }
+  }
+
+  let tv_final_correct = 0
+  let tv_final_wrong   = 20
+  let tv_final_table = [ '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' ]
+  for ( x=0 ; x<20 ; x++){
+    if ( tv_answers.indexOf(tv_user_answers[x]) != -1 ){
+      tv_final_correct++
+      tv_final_wrong--
+      tv_final_table[x] = 1
+    }
+  }
+
+  //CREATES TABLE
   var create_table = document.createElement('table')
   create_table.setAttribute('id', 'results')
   document.body.appendChild(create_table)
+
+
 
   //CREATES FIRST ROW AND FIRST HEADER
   var row1 = document.createElement('tr')
@@ -2155,7 +2923,7 @@ function finish(){
 
 
 
-  //CREATES THIRD ROW AND NUMBER OF CORRECT AND WRONGS ANSWERS FROM EACH SUBJECT 
+  //CREATES THIRD ROW AND NUMBER OF CORRECT AND WRONGS ANSWERS FOR EACH SUBJECT 
   var row3 = document.createElement('tr')
   create_table.appendChild(row3)
 
@@ -2192,4 +2960,25 @@ function finish(){
   met_wrong.appendChild(met_wrong_text)
   row3.appendChild(met_wrong)
 
+  var ct_right = document.createElement('td')
+  ct_right.setAttribute('id' , 'ct-right')
+  var ct_right_text = document.createTextNode(ct_final_correct)
+  ct_right.appendChild(ct_right_text)
+  row3.appendChild(ct_right)
+  var ct_wrong = document.createElement('td')
+  ct_wrong.setAttribute('id', 'ct-wrong')
+  var ct_wrong_text = document.createTextNode(ct_final_wrong)
+  ct_wrong.appendChild(ct_wrong_text)
+  row3.appendChild(ct_wrong)
+
+  var tv_right = document.createElement('td')
+  tv_right.setAttribute('id' , 'tv-right')
+  var tv_right_text = document.createTextNode(tv_final_correct)
+  tv_right.appendChild(tv_right_text)
+  row3.appendChild(tv_right)
+  var tv_wrong = document.createElement('td')
+  tv_wrong.setAttribute('id', 'tv-wrong')
+  var tv_wrong_text = document.createTextNode(tv_final_wrong)
+  tv_wrong.appendChild(tv_wrong_text)
+  row3.appendChild(tv_wrong)
 }
