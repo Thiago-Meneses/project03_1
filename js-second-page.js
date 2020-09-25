@@ -245,10 +245,18 @@ var x = setInterval(function() {
 
   document.getElementById('clock').innerHTML = hours + 'h ' + minutes + 'm ' + seconds + 's '
 
-  if (time_remaining == 0)
-    alert('Tempo esgotado')
+  if (time_remaining < 0 ){
+    document.getElementById('clock').innerHTML = '0h 0m 0s'
+    noTime()
+  }
+
 }, 1000)
 
+function noTime(){
+  clearInterval(x)
+  alert('Tempo de prova esgotado!')
+  finish()
+}
 
 
 //CHANGE QUESTIONS AND ANSWERS
@@ -269,6 +277,12 @@ function reg(){
   c_op2.checked = false
   c_op3.checked = false
   c_op4.checked = false
+
+  c_op1.setAttribute('id', `btn1_op1`)
+  c_op2.setAttribute('id', `btn1_op2`)
+  c_op3.setAttribute('id', `btn1_op3`)
+  c_op4.setAttribute('id', `btn1_op4`)
+
   c_op1.setAttribute('oninput', 'reg_question_check()' )
   c_op2.setAttribute('oninput', 'reg_question_check()' )
   c_op3.setAttribute('oninput', 'reg_question_check()' )
@@ -281,7 +295,18 @@ function reg(){
   c_fill_2.innerHTML             = 'Específicas.'
   c_fill_3.innerHTML             = 'De voo visual.'
   c_fill_4.innerHTML             = 'De voo por instrumentos.'
+  set_reg = reg_user_answers[0]
+  if ( set_reg.indexOf("op1") != -1 )
+    c_op1.checked = true
 
+  if ( set_reg.indexOf("op2") != -1 )
+    c_op2.checked = true
+    
+  if ( set_reg.indexOf("op3") != -1 )
+    c_op3.checked = true
+    
+  if ( set_reg.indexOf("op4") != -1 )
+    c_op4.checked = true
 }
 
 //LOADS NAV QUESTIONS
@@ -290,6 +315,12 @@ function nav(){
   c_op2.checked = false
   c_op3.checked = false
   c_op4.checked = false
+
+  c_op1.setAttribute('id', `btn1_op1`)
+  c_op2.setAttribute('id', `btn1_op2`)
+  c_op3.setAttribute('id', `btn1_op3`)
+  c_op4.setAttribute('id', `btn1_op4`)
+
   c_op1.setAttribute('oninput', 'nav_question_check()' )
   c_op2.setAttribute('oninput', 'nav_question_check()' )
   c_op3.setAttribute('oninput', 'nav_question_check()' )
@@ -302,7 +333,19 @@ function nav(){
   c_fill_2.innerHTML             = `059º29'30"W`
   c_fill_3.innerHTML             = `150º15'15"E`
   c_fill_4.innerHTML             = `159º00'00"W`
+  set_nav = nav_user_answers[0]
+  if ( set_nav.indexOf("op1") != -1 )
+    c_op1.checked = true
 
+  if ( set_nav.indexOf("op2") != -1 )
+    c_op2.checked = true
+    
+  if ( set_nav.indexOf("op3") != -1 )
+    c_op3.checked = true
+    
+  if ( set_nav.indexOf("op4") != -1 )
+    c_op4.checked = true
+  
 }
 
 //LOADS MET QUESTIONS
@@ -311,6 +354,12 @@ function met(){
   c_op2.checked = false
   c_op3.checked = false
   c_op4.checked = false
+  
+  c_op1.setAttribute('id', `btn1_op1`)
+  c_op2.setAttribute('id', `btn1_op2`)
+  c_op3.setAttribute('id', `btn1_op3`)
+  c_op4.setAttribute('id', `btn1_op4`)
+
   c_op1.setAttribute('oninput', 'met_question_check()' )
   c_op2.setAttribute('oninput', 'met_question_check()' )
   c_op3.setAttribute('oninput', 'met_question_check()' )
@@ -323,7 +372,18 @@ function met(){
   c_fill_2.innerHTML             = 'SATURAÇÂO DO AR'
   c_fill_3.innerHTML             = 'ARIDEZ DA ATMOSFERA'
   c_fill_4.innerHTML             = 'FORMAÇAO DE NÉVOA SECA'
+  set_met = met_user_answers[0]
+  if ( set_met.indexOf("op1") != -1 )
+    c_op1.checked = true
 
+  if ( set_met.indexOf("op2") != -1 )
+    c_op2.checked = true
+    
+  if ( set_met.indexOf("op3") != -1 )
+    c_op3.checked = true
+    
+  if ( set_met.indexOf("op4") != -1 )
+    c_op4.checked = true
 }
 
 //LOADS CT QUESTIONS
@@ -332,6 +392,12 @@ function ct(){
   c_op2.checked = false
   c_op3.checked = false
   c_op4.checked = false
+  
+  c_op1.setAttribute('id', `btn1_op1`)
+  c_op2.setAttribute('id', `btn1_op2`)
+  c_op3.setAttribute('id', `btn1_op3`)
+  c_op4.setAttribute('id', `btn1_op4`)
+
   c_op1.setAttribute('oninput', 'ct_question_check()' )
   c_op2.setAttribute('oninput', 'ct_question_check()' )
   c_op3.setAttribute('oninput', 'ct_question_check()' )
@@ -344,6 +410,18 @@ function ct(){
   c_fill_2.innerHTML             = 'Válvula By-Pass fechar-se-á.'
   c_fill_3.innerHTML             = 'Motor funcionará com o óleo contaminado.'
   c_fill_4.innerHTML             = 'Válvula reguladora de pressão abrir-se-á'
+  set_ct = ct_user_answers[0]
+  if ( set_ct.indexOf("op1") != -1 )
+    c_op1.checked = true
+
+  if ( set_ct.indexOf("op2") != -1 )
+    c_op2.checked = true
+    
+  if ( set_ct.indexOf("op3") != -1 )
+    c_op3.checked = true
+    
+  if ( set_ct.indexOf("op4") != -1 )
+    c_op4.checked = true
 
 }
 
@@ -353,6 +431,12 @@ function tv(){
   c_op2.checked = false
   c_op3.checked = false
   c_op4.checked = false
+  
+  c_op1.setAttribute('id', `btn1_op1`)
+  c_op2.setAttribute('id', `btn1_op2`)
+  c_op3.setAttribute('id', `btn1_op3`)
+  c_op4.setAttribute('id', `btn1_op4`)
+
   c_op1.setAttribute('oninput', 'tv_question_check()' )
   c_op2.setAttribute('oninput', 'tv_question_check()' )
   c_op3.setAttribute('oninput', 'tv_question_check()' )
@@ -365,7 +449,18 @@ function tv(){
   c_fill_2.innerHTML             = 'Diminui, com a diminuição da altitude.'
   c_fill_3.innerHTML             = 'Aumenta, com o aumento da temperatura'
   c_fill_4.innerHTML             = 'Diminui, com o aumento da temperatura.'
+  set_tv = tv_user_answers[0]
+  if ( set_tv.indexOf("op1") != -1 )
+    c_op1.checked = true
 
+  if ( set_tv.indexOf("op2") != -1 )
+    c_op2.checked = true
+    
+  if ( set_tv.indexOf("op3") != -1 )
+    c_op3.checked = true
+    
+  if ( set_tv.indexOf("op4") != -1 )
+    c_op4.checked = true
 }
 
 
@@ -396,9 +491,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'De voo visual.'
       c_fill_4.innerHTML             = 'De voo por instrumentos.'
       set_reg = reg_user_answers[0]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn1_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn1_op2.checked = true
     
@@ -416,9 +511,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = '3 Meses.'
       c_fill_4.innerHTML             = '4 Meses.'
       set_reg = reg_user_answers[1]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn2_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn2_op2.checked = true
     
@@ -436,9 +531,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = '2000FT.'
       c_fill_4.innerHTML             = '2500FT.'
       set_reg = reg_user_answers[2]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn3_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn3_op2.checked = true
     
@@ -456,9 +551,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'Divisão de divulgação operacional do SIPAER.'
       c_fill_4.innerHTML             = 'Gerência Geral de Investigação e Prevenção da ANAC.'
       set_reg = reg_user_answers[3]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn4_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn4_op2.checked = true
     
@@ -476,9 +571,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'ANAC.'
       c_fill_4.innerHTML             = 'DECEA.'
       set_reg = reg_user_answers[4]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn5_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn5_op2.checked = true
     
@@ -496,9 +591,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'VI.'
       c_fill_4.innerHTML             = 'VS.'
       set_reg = reg_user_answers[5]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn6_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn6_op2.checked = true
     
@@ -516,9 +611,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'Controlador de voo.'
       c_fill_4.innerHTML             = 'Operador do controle.'
       set_reg = reg_user_answers[6]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn7_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn7_op2.checked = true
     
@@ -536,9 +631,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'Comandantes das aeronaves somente.'
       c_fill_4.innerHTML             = 'Pilotos e despachantes operacionais de voo.'
       set_reg = reg_user_answers[7]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn8_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn8_op2.checked = true
     
@@ -556,9 +651,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'Através de limites interestaduais.'
       c_fill_4.innerHTML             = 'Em rota, sempre que partir de aeródromo provido de orgão ATS.'
       set_reg = reg_user_answers[8]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn9_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn9_op2.checked = true
     
@@ -576,9 +671,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'A parada total dos motores.'
       c_fill_4.innerHTML             = 'Cumprir orientações do sinalizador.'
       set_reg = reg_user_answers[9]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn10_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn10_op2.checked = true
     
@@ -596,9 +691,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'Perna contra o vento, perna de través, perna do vento, perna base e reta final.'
       c_fill_4.innerHTML             = 'Perna contra o vento, perna de través, perna do vento, curva base e reta final.'
       set_reg = reg_user_answers[10]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn11_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn11_op2.checked = true
     
@@ -616,9 +711,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'SBD 314.'
       c_fill_4.innerHTML             = 'SBR 341.'
       set_reg = reg_user_answers[11]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn12_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn12_op2.checked = true
     
@@ -636,9 +731,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = '1.500; 5.000.'
       c_fill_4.innerHTML             = '2.000; 5.000.'
       set_reg = reg_user_answers[12]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn13_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn13_op2.checked = true
     
@@ -656,9 +751,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'C,D ou F.'
       c_fill_4.innerHTML             = 'D,F ou G.'
       set_reg = reg_user_answers[13]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn14_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn14_op2.checked = true
     
@@ -676,9 +771,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = '3910FT.'
       c_fill_4.innerHTML             = '4410FT.'
       set_reg = reg_user_answers[14]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn15_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn15_op2.checked = true
     
@@ -696,9 +791,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'Maior o QNH, maior o nível de transição.'
       c_fill_4.innerHTML             = 'Menor o QNE, maior o nível de transição.'
       set_reg = reg_user_answers[15]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn16_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn16_op2.checked = true
     
@@ -716,9 +811,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'Quando quiser pois não há restrições.'
       c_fill_4.innerHTML             = 'Poderá pousar quando quiser desde que não embarque passageiros.'
       set_reg = reg_user_answers[16]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn17_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn17_op2.checked = true
     
@@ -736,9 +831,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'Perigosa, na qual pode existir perigo para a aeronave que a sobrevoar.'
       c_fill_4.innerHTML             = 'Restrita, cujo sobrevoo so podera ser realizado de acordo com as condições preestabelecidas.'
       set_reg = reg_user_answers[17]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn18_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn18_op2.checked = true
     
@@ -756,9 +851,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'Até o desembarque do último passageiro.'
       c_fill_4.innerHTML             = 'Até que as autoridades competentes assumam a resposabilidade.'
       set_reg = reg_user_answers[18]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn19_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn19_op2.checked = true
     
@@ -776,9 +871,9 @@ function reg_call(question_btn){
       c_fill_3.innerHTML             = 'Civis e militares.'
       c_fill_4.innerHTML             = 'Públicos e privados.'
       set_reg = reg_user_answers[19]
-      if ( set_reg.indexOf("op1") != -1 ){
+      if ( set_reg.indexOf("op1") != -1 )
         btn20_op1.checked = true
-      }
+
       if ( set_reg.indexOf("op2") != -1 )
         btn20_op2.checked = true
     
@@ -819,9 +914,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = `150º15'15"E`
       c_fill_4.innerHTML             = `159º00'00"W`
       set_nav = nav_user_answers[0]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn1_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn1_op2.checked = true
     
@@ -839,9 +934,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = '249 ST.'
       c_fill_4.innerHTML             = '259 ST.'
       set_nav = nav_user_answers[1]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn2_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn2_op2.checked = true
     
@@ -859,9 +954,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Meridiano de origem.'
       c_fill_4.innerHTML             = 'Meridiano de greenwich.'
       set_nav = nav_user_answers[2]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn3_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn3_op2.checked = true
     
@@ -879,9 +974,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Greenwich é mais cedo que um lugar a oeste.'
       c_fill_4.innerHTML             = 'Greenwich é mais tarde que um lugar a este.'
       set_nav = nav_user_answers[3]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn4_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn4_op2.checked = true
     
@@ -899,9 +994,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = '13,2 US GAL'
       c_fill_4.innerHTML             = '132 US GAL'
       set_nav = nav_user_answers[4]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn5_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn5_op2.checked = true
     
@@ -919,9 +1014,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Altimétrica.'
       c_fill_4.innerHTML             = 'Termobárica.'
       set_nav = nav_user_answers[5]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn6_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn6_op2.checked = true
     
@@ -939,9 +1034,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Nível de pressão padrão.'
       c_fill_4.innerHTML             = 'Ponto qualquer considerado.'
       set_nav = nav_user_answers[6]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn7_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn7_op2.checked = true
     
@@ -959,9 +1054,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Diferenças de latitude.'
       c_fill_4.innerHTML             = 'Diferenças de longitude.'
       set_nav = nav_user_answers[7]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn8_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn8_op2.checked = true
     
@@ -979,9 +1074,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = '23:10'
       c_fill_4.innerHTML             = '23:18'
       set_nav = nav_user_answers[8]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn9_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn9_op2.checked = true
     
@@ -999,9 +1094,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Calibrada.'
       c_fill_4.innerHTML             = 'Verdadeira.'
       set_nav = nav_user_answers[9]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn10_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn10_op2.checked = true
     
@@ -1019,9 +1114,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Normais.'
       c_fill_4.innerHTML             = 'Diferentes.'
       set_nav = nav_user_answers[10]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn11_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn11_op2.checked = true
     
@@ -1039,9 +1134,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Rumo.'
       c_fill_4.innerHTML             = 'Proa.'
       set_nav = nav_user_answers[11]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn12_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn12_op2.checked = true
     
@@ -1059,9 +1154,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Sub-cardeais.'
       c_fill_4.innerHTML             = 'Sub-colaterais.'
       set_nav = nav_user_answers[12]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn13_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn13_op2.checked = true
     
@@ -1079,9 +1174,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Ortodrômica.'
       c_fill_4.innerHTML             = 'Loxodrômica.'
       set_nav = nav_user_answers[13]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn14_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn14_op2.checked = true
     
@@ -1099,9 +1194,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Componente vertical.'
       c_fill_4.innerHTML             = 'Componente horizontal.'
       set_nav = nav_user_answers[14]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn15_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn15_op2.checked = true
     
@@ -1119,9 +1214,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Isósceles.'
       c_fill_4.innerHTML             = 'Isoclínicas.'
       set_nav = nav_user_answers[15]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn16_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn16_op2.checked = true
     
@@ -1139,9 +1234,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = '4,3cm'
       c_fill_4.innerHTML             = '4,5cm'
       set_nav = nav_user_answers[16]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn17_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn17_op2.checked = true
     
@@ -1159,9 +1254,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = '(000 grau 04 min) e (180 graus)'
       c_fill_4.innerHTML             = '(018 graus 24 min) e (180 graus)'
       set_nav = nav_user_answers[17]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn18_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn18_op2.checked = true
     
@@ -1179,9 +1274,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = '15H 09MIN'
       c_fill_4.innerHTML             = '15H 29MIN'
       set_nav = nav_user_answers[18]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn19_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn19_op2.checked = true
     
@@ -1199,9 +1294,9 @@ function nav_call(question_btn){
       c_fill_3.innerHTML             = 'Esquerda e de proa.'
       c_fill_4.innerHTML             = 'Esquerda e de cauda.'
       set_nav = nav_user_answers[19]
-      if ( set_nav.indexOf("op1") != -1 ){
+      if ( set_nav.indexOf("op1") != -1 )
         btn20_op1.checked = true
-      }
+      
       if ( set_nav.indexOf("op2") != -1 )
         btn20_op2.checked = true
     
@@ -2488,68 +2583,180 @@ function tv_call(question_btn){
 
 
 //SAVES USERS ANSWERS FOR EACH QUESTION IN ONE OF THE 5 SUBJECT SPECIFIC ARRAYS
-var radio_that_called 
+var radio_that_called
+
+var r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,r16,r17,r18,r19,r20
+var r1 = r2 = r3 = r4 = r5 = r6 = r7 = r8 = r9 = r10 = r11 = r12 = r13 = r14 = r15 = r16 = r17 = r18 = r19 = r20 = 0
+
+var n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13,n14,n15,n16,n17,n18,n19,n20
+var n1 = n2 = n3 = n4 = n5 = n6 = n7 = n8 = n9 = n10 = n11 = n12 = n13 = n14 = n15 = n16 = n17 = n18 = n19 = n20 = 0
+
+var questions_completed = 0
+var elem = document.getElementById("myBar");
+var width = 0
+
 function reg_question_check(){
   radio_that_called = window.event.target.id
   if ( radio_that_called.indexOf("btn1_") != -1){
     reg_user_answers.splice(0, 1, radio_that_called)
+    r1++
+    if ( r1 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    }
   }
-  if ( radio_that_called.indexOf("btn2_") != -1 )
-    reg_user_answers.splice(1, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn3_") != -1 )
-    reg_user_answers.splice(2, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn4_") != -1 )
-    reg_user_answers.splice(3, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn5_") != -1 )
+  if ( radio_that_called.indexOf("btn2_") != -1 ){
+    reg_user_answers.splice(1, 1, radio_that_called)
+    r2++
+    if ( r2 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    }
+  }
+  if ( radio_that_called.indexOf("btn3_") != -1 ){
+    reg_user_answers.splice(2, 1, radio_that_called)
+    r3++
+    if ( r3 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    }
+  }
+  if ( radio_that_called.indexOf("btn4_") != -1 ){
+    reg_user_answers.splice(3, 1, radio_that_called)
+    r4++
+    if ( r4 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    }  
+  }
+  if ( radio_that_called.indexOf("btn5_") != -1 ){
     reg_user_answers.splice(4, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn6_") != -1 )
+    r5++
+    if ( r5 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn6_") != -1 ){
     reg_user_answers.splice(5, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn7_") != -1 )
+    r6++
+    if ( r6 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn7_") != -1 ){
     reg_user_answers.splice(6, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn8_") != -1 )
+    r7++
+    if ( r7 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn8_") != -1 ){
     reg_user_answers.splice(7, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn9_") != -1 )
-    reg_user_answers.splice(8, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn10_") != -1 )
+    r8++
+    if ( r8 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn9_") != -1 ){
+    reg_user_answers.splice(8, 1, radio_that_called)
+    r9++
+    if ( r9 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    }  
+  }
+  if ( radio_that_called.indexOf("btn10_") != -1 ){
     reg_user_answers.splice(9, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn11_") != -1 )
+    r10++
+    if ( r10 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn11_") != -1 ){
     reg_user_answers.splice(10, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn12_") != -1 )
-    reg_user_answers.splice(11, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn13_") != -1 )
-    reg_user_answers.splice(12, 1, radio_that_called) 
-    
-  if ( radio_that_called.indexOf("btn14_") != -1 )
-    reg_user_answers.splice(13, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn15_") != -1 )
+    r11++
+    if ( r11 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn12_") != -1 ){
+    reg_user_answers.splice(11, 1, radio_that_called)
+    r12++
+    if ( r12 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    }  
+  }
+  if ( radio_that_called.indexOf("btn13_") != -1 ){
+    reg_user_answers.splice(12, 1, radio_that_called)
+    r13++
+    if ( r13 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    }  
+   } 
+  if ( radio_that_called.indexOf("btn14_") != -1 ){
+    reg_user_answers.splice(13, 1, radio_that_called)
+    r14++
+    if ( r14 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    }  
+  }
+  if ( radio_that_called.indexOf("btn15_") != -1 ){
     reg_user_answers.splice(14, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn16_") != -1 )
+    r15++
+    if ( r15 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn16_") != -1 ){
     reg_user_answers.splice(15, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn17_") != -1 )
+    r16++
+    if ( r16 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn17_") != -1 ){
     reg_user_answers.splice(16, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn18_") != -1 )
-    reg_user_answers.splice(17, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn19_") != -1 )
-    reg_user_answers.splice(18, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn20_") != -1 )
-    reg_user_answers.splice(19, 1, radio_that_called) 
+    r17++
+    if ( r17 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn18_") != -1 ){
+    reg_user_answers.splice(17, 1, radio_that_called)
+    r18++
+    if ( r18 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    }  
+  }
+  if ( radio_that_called.indexOf("btn19_") != -1 ){
+    reg_user_answers.splice(18, 1, radio_that_called)
+    r19++
+    if ( r19 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    }  
+  }
+  if ( radio_that_called.indexOf("btn20_") != -1 ){
+    reg_user_answers.splice(19, 1, radio_that_called)
+    r20++
+    if ( r20 == 1 ){
+      width++
+      elem.style.width = width + "%";
+    }  
+  }
 } 
 
 function nav_question_check(){
@@ -2807,6 +3014,10 @@ function tv_question_check(){
 
 
 function finish(){
+  clearInterval(x)
+  var removebutton = document.getElementById('btn-finish')
+  removebutton.parentNode.removeChild(removebutton);
+
   let reg_final_correct = 0
   let reg_final_wrong   = 20
   let reg_final_table = [ '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' , '0' ]
