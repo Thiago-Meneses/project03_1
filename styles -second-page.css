@@ -1,13 +1,20 @@
 #myProgress {
-    width: 100%;
-    background-color: grey;
-  }
+  width: 100%;
+  background-color: grey;
+}
   
-  #myBar {
-    width: 0;
-    height: 20px;
-    background-color: yellow;
-  }
+#myBar {
+  width: 0;
+  height: 20px;
+  background-color: yellow;
+}
+
+#finalBar {
+  width: 0;
+  height: 20px;
+  background-color: yellow;
+}
+
 
 table{
   border-collapse: collapse;

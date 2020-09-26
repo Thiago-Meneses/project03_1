@@ -2584,6 +2584,10 @@ function tv_call(question_btn){
 
 //SAVES USERS ANSWERS FOR EACH QUESTION IN ONE OF THE 5 SUBJECT SPECIFIC ARRAYS
 var radio_that_called
+var totalQuestions   = 0
+var c_totalQuestions = document.getElementById('total-questions')
+var elem             = document.getElementById("myBar")
+var width            = 0
 
 var r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,r16,r17,r18,r19,r20
 var r1 = r2 = r3 = r4 = r5 = r6 = r7 = r8 = r9 = r10 = r11 = r12 = r13 = r14 = r15 = r16 = r17 = r18 = r19 = r20 = 0
@@ -2591,9 +2595,14 @@ var r1 = r2 = r3 = r4 = r5 = r6 = r7 = r8 = r9 = r10 = r11 = r12 = r13 = r14 = r
 var n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13,n14,n15,n16,n17,n18,n19,n20
 var n1 = n2 = n3 = n4 = n5 = n6 = n7 = n8 = n9 = n10 = n11 = n12 = n13 = n14 = n15 = n16 = n17 = n18 = n19 = n20 = 0
 
-var questions_completed = 0
-var elem = document.getElementById("myBar");
-var width = 0
+var m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16,m17,m18,m19,m20
+var m1 = m2 = m3 = m4 = m5 = m6 = m7 = m8 = m9 = m10 = m11 = m12 = m13 = m14 = m15 = m16 = m17 = m18 = m19 = m20 = 0
+
+var c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20
+var c1 = c2 = c3 = c4 = c5 = c6 = c7 = c8 = c9 = c10 = c11 = c12 = c13 = c14 = c15 = c16 = c17 = c18 = c19 = c20 = 0
+
+var t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19,t20
+var t1 = t2 = t3 = t4 = t5 = t6 = t7 = t8 = t9 = t10 = t11 = t12 = t13 = t14 = t15 = t16 = t17 = t18 = t19 = t20 = 0
 
 function reg_question_check(){
   radio_that_called = window.event.target.id
@@ -2602,6 +2611,8 @@ function reg_question_check(){
     r1++
     if ( r1 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     }
   }
@@ -2610,6 +2621,8 @@ function reg_question_check(){
     r2++
     if ( r2 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     }
   }
@@ -2618,6 +2631,8 @@ function reg_question_check(){
     r3++
     if ( r3 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     }
   }
@@ -2626,6 +2641,8 @@ function reg_question_check(){
     r4++
     if ( r4 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     }  
   }
@@ -2634,6 +2651,8 @@ function reg_question_check(){
     r5++
     if ( r5 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     } 
   }
@@ -2642,6 +2661,8 @@ function reg_question_check(){
     r6++
     if ( r6 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     } 
   }
@@ -2650,6 +2671,8 @@ function reg_question_check(){
     r7++
     if ( r7 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     } 
   }
@@ -2658,6 +2681,8 @@ function reg_question_check(){
     r8++
     if ( r8 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     } 
   }
@@ -2666,6 +2691,8 @@ function reg_question_check(){
     r9++
     if ( r9 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     }  
   }
@@ -2674,6 +2701,8 @@ function reg_question_check(){
     r10++
     if ( r10 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     } 
   }
@@ -2682,6 +2711,8 @@ function reg_question_check(){
     r11++
     if ( r11 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     } 
   }
@@ -2690,6 +2721,8 @@ function reg_question_check(){
     r12++
     if ( r12 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     }  
   }
@@ -2698,6 +2731,8 @@ function reg_question_check(){
     r13++
     if ( r13 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     }  
    } 
@@ -2706,6 +2741,8 @@ function reg_question_check(){
     r14++
     if ( r14 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     }  
   }
@@ -2714,6 +2751,8 @@ function reg_question_check(){
     r15++
     if ( r15 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     } 
   }
@@ -2722,6 +2761,8 @@ function reg_question_check(){
     r16++
     if ( r16 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     } 
   }
@@ -2730,6 +2771,8 @@ function reg_question_check(){
     r17++
     if ( r17 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     } 
   }
@@ -2738,6 +2781,8 @@ function reg_question_check(){
     r18++
     if ( r18 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     }  
   }
@@ -2746,6 +2791,8 @@ function reg_question_check(){
     r19++
     if ( r19 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     }  
   }
@@ -2754,6 +2801,8 @@ function reg_question_check(){
     r20++
     if ( r20 == 1 ){
       width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
       elem.style.width = width + "%";
     }  
   }
@@ -2763,260 +2812,904 @@ function nav_question_check(){
   radio_that_called = window.event.target.id
   if ( radio_that_called.indexOf("btn1_") != -1 ){
     nav_user_answers.splice(0, 1, radio_that_called)
+    n1++
+    if ( n1 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
   }
-  if ( radio_that_called.indexOf("btn2_") != -1 )
+  if ( radio_that_called.indexOf("btn2_") != -1 ){
     nav_user_answers.splice(1, 1, radio_that_called) 
+    n2++
+    if ( n2 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn3_") != -1 )
+  if ( radio_that_called.indexOf("btn3_") != -1 ){
     nav_user_answers.splice(2, 1, radio_that_called) 
+    n3++
+    if ( n3 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn4_") != -1 )
+  if ( radio_that_called.indexOf("btn4_") != -1 ){
     nav_user_answers.splice(3, 1, radio_that_called) 
+    n4++
+    if ( n4 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn5_") != -1 )
+  if ( radio_that_called.indexOf("btn5_") != -1 ){
     nav_user_answers.splice(4, 1, radio_that_called)
+    n5++
+    if ( n5 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn6_") != -1 )
+  if ( radio_that_called.indexOf("btn6_") != -1 ){
     nav_user_answers.splice(5, 1, radio_that_called)
+    n6++
+    if ( n6 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn7_") != -1 )
+  if ( radio_that_called.indexOf("btn7_") != -1 ){
     nav_user_answers.splice(6, 1, radio_that_called)
+    n7++
+    if ( n7 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn8_") != -1 )
+  if ( radio_that_called.indexOf("btn8_") != -1 ){
     nav_user_answers.splice(7, 1, radio_that_called)
+    n8++
+    if ( n8 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn9_") != -1 )
+  if ( radio_that_called.indexOf("btn9_") != -1 ){
     nav_user_answers.splice(8, 1, radio_that_called) 
+    n9++
+    if ( n9 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn10_") != -1 )
+  if ( radio_that_called.indexOf("btn10_") != -1 ){
     nav_user_answers.splice(9, 1, radio_that_called)
+    n10++
+    if ( n10 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn11_") != -1 )
+  if ( radio_that_called.indexOf("btn11_") != -1 ){
     nav_user_answers.splice(10, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn12_") != -1 )
-    nav_user_answers.splice(11, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn13_") != -1 )
-    nav_user_answers.splice(12, 1, radio_that_called) 
-    
-  if ( radio_that_called.indexOf("btn14_") != -1 )
-    nav_user_answers.splice(13, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn15_") != -1 )
+    n11++
+    if ( n11 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn12_") != -1 ){
+    nav_user_answers.splice(11, 1, radio_that_called)
+    n12++
+    if ( n12 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn13_") != -1 ){
+    nav_user_answers.splice(12, 1, radio_that_called)
+    n13++
+    if ( n13 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    } 
+    }
+  if ( radio_that_called.indexOf("btn14_") != -1 ){
+    nav_user_answers.splice(13, 1, radio_that_called)
+    n14++
+    if ( n14 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn15_") != -1 ){
     nav_user_answers.splice(14, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn16_") != -1 )
+    n15++
+    if ( n15 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn16_") != -1 ){
     nav_user_answers.splice(15, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn17_") != -1 )
+    n16++
+    if ( n16 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn17_") != -1 ){
     nav_user_answers.splice(16, 1, radio_that_called)
-
-  if ( radio_that_called.indexOf("btn18_") != -1 )
-    nav_user_answers.splice(17, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn19_") != -1 )
-    nav_user_answers.splice(18, 1, radio_that_called) 
-
-  if ( radio_that_called.indexOf("btn20_") != -1 )
-    nav_user_answers.splice(19, 1, radio_that_called) 
-} 
+    n17++
+    if ( n17 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn18_") != -1 ){
+    nav_user_answers.splice(17, 1, radio_that_called)
+    n18++
+    if ( n18 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn19_") != -1 ){
+    nav_user_answers.splice(18, 1, radio_that_called)
+    n19++
+    if ( n19 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    } 
+  }
+  if ( radio_that_called.indexOf("btn20_") != -1 ){
+    nav_user_answers.splice(19, 1, radio_that_called)
+    n20++
+    if ( n20 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    } 
+  }
+}
 
 function met_question_check(){
   radio_that_called = window.event.target.id
   if ( radio_that_called.indexOf("btn1_") != -1 ){
     met_user_answers.splice(0, 1, radio_that_called)
+    m1++
+    if ( m1 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
   }
-  if ( radio_that_called.indexOf("btn2_") != -1 )
-    met_user_answers.splice(1, 1, radio_that_called) 
 
-  if ( radio_that_called.indexOf("btn3_") != -1 )
-    met_user_answers.splice(2, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn2_") != -1 ){
+    met_user_answers.splice(1, 1, radio_that_called)
+    m2++
+    if ( m2 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn4_") != -1 )
-    met_user_answers.splice(3, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn3_") != -1 ){
+    met_user_answers.splice(2, 1, radio_that_called)
+    m3++
+    if ( m3 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn5_") != -1 )
+  if ( radio_that_called.indexOf("btn4_") != -1 ){
+    met_user_answers.splice(3, 1, radio_that_called)
+    m4++
+    if ( m4 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
+
+  if ( radio_that_called.indexOf("btn5_") != -1 ){
     met_user_answers.splice(4, 1, radio_that_called)
+    m5++
+    if ( m5 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn6_") != -1 )
+  if ( radio_that_called.indexOf("btn6_") != -1 ){
     met_user_answers.splice(5, 1, radio_that_called)
+    m6++
+    if ( m6 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn7_") != -1 )
+  if ( radio_that_called.indexOf("btn7_") != -1 ){
     met_user_answers.splice(6, 1, radio_that_called)
+    m7++
+    if ( m7 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn8_") != -1 )
+  if ( radio_that_called.indexOf("btn8_") != -1 ){
     met_user_answers.splice(7, 1, radio_that_called)
+    m8++
+    if ( m8 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn9_") != -1 )
-    met_user_answers.splice(8, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn9_") != -1 ){
+    met_user_answers.splice(8, 1, radio_that_called)
+    m9++
+    if ( m9 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn10_") != -1 )
+  if ( radio_that_called.indexOf("btn10_") != -1 ){
     met_user_answers.splice(9, 1, radio_that_called)
+    m10++
+    if ( m10 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn11_") != -1 )
+  if ( radio_that_called.indexOf("btn11_") != -1 ){
     met_user_answers.splice(10, 1, radio_that_called)
+    m11++
+    if ( m11 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn12_") != -1 )
-    met_user_answers.splice(11, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn12_") != -1 ){
+    met_user_answers.splice(11, 1, radio_that_called)
+    m12++
+    if ( m12 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn13_") != -1 )
-    met_user_answers.splice(12, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn13_") != -1 ){
+    met_user_answers.splice(12, 1, radio_that_called)
+    m13++
+    if ( m13 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
     
-  if ( radio_that_called.indexOf("btn14_") != -1 )
-    met_user_answers.splice(13, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn14_") != -1 ){
+    met_user_answers.splice(13, 1, radio_that_called)
+    m14++
+    if ( m14 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn15_") != -1 )
+  if ( radio_that_called.indexOf("btn15_") != -1 ){
     met_user_answers.splice(14, 1, radio_that_called)
+    m15++
+    if ( m15 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn16_") != -1 )
+  if ( radio_that_called.indexOf("btn16_") != -1 ){
     met_user_answers.splice(15, 1, radio_that_called)
+    m16++
+    if ( m16 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn17_") != -1 )
+  if ( radio_that_called.indexOf("btn17_") != -1 ){
     met_user_answers.splice(16, 1, radio_that_called)
+    m17++
+    if ( m17 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn18_") != -1 )
-    met_user_answers.splice(17, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn18_") != -1 ){
+    met_user_answers.splice(17, 1, radio_that_called)
+    m18++
+    if ( m18 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn19_") != -1 )
-    met_user_answers.splice(18, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn19_") != -1 ){
+    met_user_answers.splice(18, 1, radio_that_called)
+    m19++
+    if ( m19 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn20_") != -1 )
-    met_user_answers.splice(19, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn20_") != -1 ){
+    met_user_answers.splice(19, 1, radio_that_called)
+    m20++
+    if ( m20 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 } 
 
 function ct_question_check(){
   radio_that_called = window.event.target.id
   if ( radio_that_called.indexOf("btn1_") != -1 ){
     ct_user_answers.splice(0, 1, radio_that_called)
+    c1++
+    if ( c1 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
   }
-  if ( radio_that_called.indexOf("btn2_") != -1 )
-    ct_user_answers.splice(1, 1, radio_that_called) 
+  
+  if ( radio_that_called.indexOf("btn2_") != -1 ){
+    ct_user_answers.splice(1, 1, radio_that_called)
+    c2++
+    if ( c2 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn3_") != -1 )
-    ct_user_answers.splice(2, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn3_") != -1 ){
+    ct_user_answers.splice(2, 1, radio_that_called)
+    c3++
+    if ( c3 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn4_") != -1 )
-    ct_user_answers.splice(3, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn4_") != -1 ){
+    ct_user_answers.splice(3, 1, radio_that_called)
+    c4++
+    if ( c4 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn5_") != -1 )
+  if ( radio_that_called.indexOf("btn5_") != -1 ){
     ct_user_answers.splice(4, 1, radio_that_called)
+    c5++
+    if ( c5 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn6_") != -1 )
+  if ( radio_that_called.indexOf("btn6_") != -1 ){
     ct_user_answers.splice(5, 1, radio_that_called)
+    c6++
+    if ( c6 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn7_") != -1 )
+  if ( radio_that_called.indexOf("btn7_") != -1 ){
     ct_user_answers.splice(6, 1, radio_that_called)
+    c7++
+    if ( c7 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn8_") != -1 )
+  if ( radio_that_called.indexOf("btn8_") != -1 ){
     ct_user_answers.splice(7, 1, radio_that_called)
+    c8++
+    if ( c8 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn9_") != -1 )
-    ct_user_answers.splice(8, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn9_") != -1 ){
+    ct_user_answers.splice(8, 1, radio_that_called)
+    c9++
+    if ( c9 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn10_") != -1 )
+  if ( radio_that_called.indexOf("btn10_") != -1 ){
     ct_user_answers.splice(9, 1, radio_that_called)
+    c10++
+    if ( c10 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn11_") != -1 )
+  if ( radio_that_called.indexOf("btn11_") != -1 ){
     ct_user_answers.splice(10, 1, radio_that_called)
+    c11++
+    if ( c11 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn12_") != -1 )
-    ct_user_answers.splice(11, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn12_") != -1 ){
+    ct_user_answers.splice(11, 1, radio_that_called)
+    c12++
+    if ( c12 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn13_") != -1 )
-    ct_user_answers.splice(12, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn13_") != -1 ){
+    ct_user_answers.splice(12, 1, radio_that_called)
+    c13++
+    if ( c13 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
     
-  if ( radio_that_called.indexOf("btn14_") != -1 )
-    ct_user_answers.splice(13, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn14_") != -1 ){
+    ct_user_answers.splice(13, 1, radio_that_called)
+    c14++
+    if ( c14 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn15_") != -1 )
+  if ( radio_that_called.indexOf("btn15_") != -1 ){
     ct_user_answers.splice(14, 1, radio_that_called)
+    c15++
+    if ( c15 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn16_") != -1 )
+  if ( radio_that_called.indexOf("btn16_") != -1 ){
     ct_user_answers.splice(15, 1, radio_that_called)
+    c16++
+    if ( c16 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn17_") != -1 )
+  if ( radio_that_called.indexOf("btn17_") != -1 ){
     ct_user_answers.splice(16, 1, radio_that_called)
+    c17++
+    if ( c17 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn18_") != -1 )
-    ct_user_answers.splice(17, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn18_") != -1 ){
+    ct_user_answers.splice(17, 1, radio_that_called)
+    c18++
+    if ( c18 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn19_") != -1 )
-    ct_user_answers.splice(18, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn19_") != -1 ){
+    ct_user_answers.splice(18, 1, radio_that_called)
+    c19++
+    if ( c19 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn20_") != -1 )
-    ct_user_answers.splice(19, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn20_") != -1 ){
+    ct_user_answers.splice(19, 1, radio_that_called)
+    c20++
+    if ( c20 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 } 
 
 function tv_question_check(){
   radio_that_called = window.event.target.id
   if ( radio_that_called.indexOf("btn1_") != -1 ){
     tv_user_answers.splice(0, 1, radio_that_called)
+    t1++
+    if ( t1 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
   }
-  if ( radio_that_called.indexOf("btn2_") != -1 )
-    tv_user_answers.splice(1, 1, radio_that_called) 
+  
+  if ( radio_that_called.indexOf("btn2_") != -1 ){
+    tv_user_answers.splice(1, 1, radio_that_called)
+    t2++
+    if ( t2 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn3_") != -1 )
-    tv_user_answers.splice(2, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn3_") != -1 ){
+    tv_user_answers.splice(2, 1, radio_that_called)
+    t3++
+    if ( t3 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn4_") != -1 )
-    tv_user_answers.splice(3, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn4_") != -1 ){
+    tv_user_answers.splice(3, 1, radio_that_called)
+    t4++
+    if ( t4 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn5_") != -1 )
+  if ( radio_that_called.indexOf("btn5_") != -1 ){
     tv_user_answers.splice(4, 1, radio_that_called)
+    t5++
+    if ( t5 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn6_") != -1 )
+  if ( radio_that_called.indexOf("btn6_") != -1 ){
     tv_user_answers.splice(5, 1, radio_that_called)
+    t6++
+    if ( t6 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn7_") != -1 )
+  if ( radio_that_called.indexOf("btn7_") != -1 ){
     tv_user_answers.splice(6, 1, radio_that_called)
+    t7++
+    if ( t7 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn8_") != -1 )
+  if ( radio_that_called.indexOf("btn8_") != -1 ){
     tv_user_answers.splice(7, 1, radio_that_called)
+    t8++
+    if ( t8 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn9_") != -1 )
-    tv_user_answers.splice(8, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn9_") != -1 ){
+    tv_user_answers.splice(8, 1, radio_that_called)
+    t9++
+    if ( t9 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn10_") != -1 )
+  if ( radio_that_called.indexOf("btn10_") != -1 ){
     tv_user_answers.splice(9, 1, radio_that_called)
+    t10++
+    if ( t10 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn11_") != -1 )
+  if ( radio_that_called.indexOf("btn11_") != -1 ){
     tv_user_answers.splice(10, 1, radio_that_called)
+    t11++
+    if ( t11 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn12_") != -1 )
-    tv_user_answers.splice(11, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn12_") != -1 ){
+    tv_user_answers.splice(11, 1, radio_that_called)
+    t12++
+    if ( t12 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn13_") != -1 )
-    tv_user_answers.splice(12, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn13_") != -1 ){
+    tv_user_answers.splice(12, 1, radio_that_called)
+    t13++
+    if ( t13 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
     
-  if ( radio_that_called.indexOf("btn14_") != -1 )
-    tv_user_answers.splice(13, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn14_") != -1 ){
+    tv_user_answers.splice(13, 1, radio_that_called)
+    t14++
+    if ( t14 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn15_") != -1 )
+  if ( radio_that_called.indexOf("btn15_") != -1 ){
     tv_user_answers.splice(14, 1, radio_that_called)
+    t15++
+    if ( t15 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn16_") != -1 )
+  if ( radio_that_called.indexOf("btn16_") != -1 ){
     tv_user_answers.splice(15, 1, radio_that_called)
+    t16++
+    if ( t16 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn17_") != -1 )
+  if ( radio_that_called.indexOf("btn17_") != -1 ){
     tv_user_answers.splice(16, 1, radio_that_called)
+    t17++
+    if ( t17 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  }
 
-  if ( radio_that_called.indexOf("btn18_") != -1 )
-    tv_user_answers.splice(17, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn18_") != -1 ){
+    tv_user_answers.splice(17, 1, radio_that_called)
+    t18++
+    if ( t18 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn19_") != -1 )
-    tv_user_answers.splice(18, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn19_") != -1 ){
+    tv_user_answers.splice(18, 1, radio_that_called)
+    t19++
+    if ( t19 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 
-  if ( radio_that_called.indexOf("btn20_") != -1 )
-    tv_user_answers.splice(19, 1, radio_that_called) 
+  if ( radio_that_called.indexOf("btn20_") != -1 ){
+    tv_user_answers.splice(19, 1, radio_that_called)
+    t20++
+    if ( t20 == 1 ){
+      width++
+      totalQuestions++
+      c_totalQuestions.innerHTML = totalQuestions
+      elem.style.width = width + "%";
+    }
+  } 
 } 
 
 
 
 function finish(){
   clearInterval(x)
+
   var removebutton = document.getElementById('btn-finish')
   removebutton.parentNode.removeChild(removebutton);
+
+  elem.parentNode.removeChild(elem)
+  var final_bar = document.createElement('div')
+  final_bar.setAttribute('id' , 'finalBar')
+  final_bar.style.width = width + "%";
+  var c_myProgress = document.getElementById('myProgress')
+  c_myProgress.appendChild(final_bar)
+
+  var create_final_questions = document.createElement('a')
+  create_final_questions.setAttribute('id' , 'finalQuestions')
+  final_bar.appendChild(create_final_questions)
+  create_final_questions_text = document.createTextNode(`${totalQuestions}/100`)
+  create_final_questions.appendChild(create_final_questions_text)
 
   let reg_final_correct = 0
   let reg_final_wrong   = 20
@@ -3075,7 +3768,7 @@ function finish(){
 
   //CREATES TABLE
   var create_table = document.createElement('table')
-  create_table.setAttribute('id', 'results')
+  create_table.setAttribute('id', 'tabela')
   document.body.appendChild(create_table)
 
 
