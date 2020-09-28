@@ -3,10 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Projeto 03-01</title>
 </head>
 <body>
-    <input type='button' id='btn' onclick='start()' value='Iniciar Simulado'>
+    <header>
+        <div id='logo'>
+            <h1>Take</h1>
+            <h1>Off!</h1>
+        </div>
+    </header>
+    <section id='wrapper'>
+        <div id='container'>
+            <div id='inside'>
+                <h1 id='first-header' class='headers'>Take Off Simulados</h1>
+                <hr>
+                <p id='first-p' class='paragraphs'>
+                    A Take Off Simulados é uma plataforma de provas online, focada na banca de Piloto Privado da ANAC
+                </p>
+
+                <h1 id='second-header' class='headers'>O que é <strong>ANAC</strong></h1>
+                <hr>
+                <p id='second-p' class='paragraphs'>
+                    ANAC (Agência Nacional de Aviação Civil) é uma agência reguladora federal cuja responsabilidade é normatizar e supervisionar a atividade de aviação civil no Brasil, tanto no que toca seus aspectos econômicos quanto no que diz respeito à segurança técnica do setor. Isso inclui a resposabilidade pela confecção e realização de provas.
+                </p>
+
+                <h1 id='third-header' class='headers'>Como é a prova da ANAC</h1>
+                <hr>
+                <p id='third-p' class='paragraphs'>
+                    Existem diversas provas específicas para cada setor dentro da aviação civil (Comissários, Mecânicos, Pilotos de Helicóptero, Pilotos de Avião, etc).
+                </p>
+                <p id='third-p2' class='paragraphs'>
+                    A prova de Piloto Privado de Avião (PPA) é dividida em 5 matérias:
+                    <ul>
+                        <li>•Regulamentos de Tráfego Aéreo</li>
+                        <li>•Navegação Aérea</li>
+                        <li>•Meteorologia</li>
+                        <li>•Teoria de Voo</li>
+                        <li>•Conhecimentos Técnicos</li>
+                    </ul>
+                </p>
+                <h1 id='third-header' class='headers'>Pronto para realizar seu simulado?</h1>
+                <hr>
+                <p id='third-p' class='paragraphs'>
+                    Pronto para passar na sua banca da ANAC? Clique no botão abaixo e descubra se você tem o que é necessário!
+                </p>
+            </div>
+        </div>
+
+        <div id='container2'>
+            <div id='inside2'>
+                <input type='button' id='btn' onclick='start()' value='Clique para Iniciar seu Simulado!'>
+            </div>
+        </div>
+    </section> 
+    <div class="footer">
+        <div class="footer-bottom">
+            Designed by Thiago Meneses
+        </div>
+    </div>
 
     <script src='javascript.js'></script>
 </body>
