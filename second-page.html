@@ -8,78 +8,78 @@
 </head>
 <body>
 
+    <div id='container'>
+        <div id="myProgress">
+            <div id="myBar">
+                </a><a id='total-questions'>0</a><a>/100</a>
+            </div>
+        </div>
 
-    <div id="myProgress">
-        <div id="myBar">
-            </a><a id='total-questions'>0</a><a>/100</a>
+        <div>
+            <div id='subject-tab'>
+                <input type="button" value="Regulamentos"  onclick='reg()'>
+                <input type="button" value="Navegação"     onclick='nav()'>
+                <input type="button" value="Meteorologia"  onclick='met()'>
+                <input type="button" value="Conhecimentos" onclick='ct()'>
+                <input type="button" value="Teoria de Voo" onclick='tv()'> 
+            </div> 
+
+            <div id='question-numbers'>
+                <input type="button" id='btn1' value="1" onclick='reg_call(1)'>
+                <input type="button" id='btn2' value="2" onclick='reg_call(2)'>
+                <input type="button" id='btn3' value="3" onclick='reg_call(3)'>
+                <input type="button" id='btn4' value="4" onclick='reg_call(4)'>
+                <input type="button" id='btn5' value="5" onclick='reg_call(5)'>
+                <input type="button" id='btn6' value="6" onclick='reg_call(6)'>
+                <input type="button" id='btn7' value="7" onclick='reg_call(7)'>
+                <input type="button" id='btn8' value="8" onclick='reg_call(8)'>
+                <input type="button" id='btn9' value="9" onclick='reg_call(9)'>
+                <input type="button" id='btn10' value="10" onclick='reg_call(10)'>
+                <input type="button" id='btn11' value="11" onclick='reg_call(11)'>
+                <input type="button" id='btn12' value="12" onclick='reg_call(12)'>
+                <input type="button" id='btn13' value="13" onclick='reg_call(13)'>
+                <input type="button" id='btn14' value="14" onclick='reg_call(14)'>
+                <input type="button" id='btn15' value="15" onclick='reg_call(15)'>
+                <input type="button" id='btn16' value="16" onclick='reg_call(16)'>
+                <input type="button" id='btn17' value="17" onclick='reg_call(17)'>
+                <input type="button" id='btn18' value="18" onclick='reg_call(18)'>
+                <input type="button" id='btn19' value="19" onclick='reg_call(19)'>
+                <input type="button" id='btn20' value="20" onclick='reg_call(20)'>
+            </div>
+        </div>  
+
+        <div>
+            <div id='questions-info'>
+                <p id='question_header'>1. Durante o táxi as aeronaves devem obedecer as regras:</p>
+
+                <label for="op1">a)</label>
+                <input type="radio" id='btn1_op1' name='radio_group' oninput="reg_question_check()">
+                <label for="op1" id='fill_1'>Gerais.</label>
+
+                <br>
+
+                <label for="op2">b)</label>
+                <input type="radio" id='btn1_op2' name='radio_group' oninput="reg_question_check()">
+                <label for="op2" id='fill_2'>Específicas.</label>
+
+                <br>
+
+                <label for="op3">c)</label>
+                <input type="radio" id='btn1_op3' name='radio_group' oninput="reg_question_check()">
+                <label for="op3" id='fill_3'>De voo visual.</label>
+
+                <br>
+
+                <label for="op4">d)</label>
+                <input type="radio" id='btn1_op4' name='radio_group' oninput="reg_question_check()">
+                <label for="op4" id='fill_4'>De voo por instrumentos.</label>
+            </div>
         </div>
     </div>
-    
-    <div>
-        <div>
-            <input type="button" value="Regulamentos"  onclick='reg()'>
-            <input type="button" value="Navegação"     onclick='nav()'>
-            <input type="button" value="Meteorologia"  onclick='met()'>
-            <input type="button" value="Conhecimentos" onclick='ct()'>
-            <input type="button" value="Teoria de Voo" onclick='tv()'> 
-        </div> 
 
-        <div>
-            <input type="button" id='btn1' value="1" onclick='reg_call(1)'>
-            <input type="button" id='btn2' value="2" onclick='reg_call(2)'>
-            <input type="button" id='btn3' value="3" onclick='reg_call(3)'>
-            <input type="button" id='btn4' value="4" onclick='reg_call(4)'>
-            <input type="button" id='btn5' value="5" onclick='reg_call(5)'>
-            <input type="button" id='btn6' value="6" onclick='reg_call(6)'>
-            <input type="button" id='btn7' value="7" onclick='reg_call(7)'>
-            <input type="button" id='btn8' value="8" onclick='reg_call(8)'>
-            <input type="button" id='btn9' value="9" onclick='reg_call(9)'>
-            <input type="button" id='btn10' value="10" onclick='reg_call(10)'>
-            <input type="button" id='btn11' value="11" onclick='reg_call(11)'>
-            <input type="button" id='btn12' value="12" onclick='reg_call(12)'>
-            <input type="button" id='btn13' value="13" onclick='reg_call(13)'>
-            <input type="button" id='btn14' value="14" onclick='reg_call(14)'>
-            <input type="button" id='btn15' value="15" onclick='reg_call(15)'>
-            <input type="button" id='btn16' value="16" onclick='reg_call(16)'>
-            <input type="button" id='btn17' value="17" onclick='reg_call(17)'>
-            <input type="button" id='btn18' value="18" onclick='reg_call(18)'>
-            <input type="button" id='btn19' value="19" onclick='reg_call(19)'>
-            <input type="button" id='btn20' value="20" onclick='reg_call(20)'>
-        </div>
-    </div>  
-
-    <div>
-        <div>
-            <p id='question_header'>1. Durante o táxi as aeronaves devem obedecer as regras:</p>
-
-            <label for="op1">a)</label>
-            <input type="radio" id='btn1_op1' name='radio_group' oninput="reg_question_check()">
-            <label for="op1" id='fill_1'>Gerais.</label>
-
-            <br>
-
-            <label for="op2">b)</label>
-            <input type="radio" id='btn1_op2' name='radio_group' oninput="reg_question_check()">
-            <label for="op2" id='fill_2'>Específicas.</label>
-
-            <br>
-
-            <label for="op3">c)</label>
-            <input type="radio" id='btn1_op3' name='radio_group' oninput="reg_question_check()">
-            <label for="op3" id='fill_3'>De voo visual.</label>
-
-            <br>
-
-            <label for="op4">d)</label>
-            <input type="radio" id='btn1_op4' name='radio_group' oninput="reg_question_check()">
-            <label for="op4" id='fill_4'>De voo por instrumentos.</label>
-        </div>
-    </div>
-
-    <input type="button" value='Terminar Simulado' onclick="finish()" id='btn-finish'>
-    
-    <div>
-        <div>
+    <div id='container2'>
+        <input type="button" value='Terminar Simulado' onclick="finish()" id='btn-finish'>
+        <div id='div-clock'>
             <p id='clock'></p>
         </div>
     </div>
