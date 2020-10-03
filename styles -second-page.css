@@ -1,10 +1,14 @@
 *{
+  border: 0;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
 }
 
 #myProgress {
-  width: 100%;
+  /*opacity: 0%;*/
+  width: 1480px;
   height: 40px;
   font-size: 35px;
   background-color: grey;
@@ -12,7 +16,7 @@
   
 #myBar {
   width: 0;
-  height: 20px;
+  height: 40px; 
   background-color: yellow;
 }
 
@@ -40,51 +44,104 @@ td{
 #container{
   background-color: pink;
   width: 1500px;
-  height: 500px;
   padding: 10px;
 }
 
+
+#progress-container{
+  /*opacity: 0%;*/
+  width: 1500px;
+  position: relative;
+  text-align: center;
+}
+
+
+#subject-container{
+  /*opacity: 0%;*/
+  background-color: rgb(62, 177, 39);
+  width: 1480px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
 #subject-tab{
   background-color:green;
-  padding: 10px;
+  position: relative;
+  margin: 0;
 }
-
 #subject-tab input{
   font-size: 35px;
   padding: 5px 15px;
+  float: left;
+  border: 2px solid rgb(187, 57, 57);
+  position: relative;
+  width: 296px;
+}
+#subject-tab input:focus{
+  outline: none;
 }
 
-#question-numbers{
+
+#question-container{
+  /*opacity: 0%;*/
+  width: 1480px;
+  display:table;
+  background-color: black;
+  position: relative;
+}
+#question-numbers{ /**/
   background-color: darkmagenta;
-  padding: 10px;
+  padding: 0;
+}
+#question-numbers input{
+  /*padding: 3px 15px;*/
+  font-size: 35px;
+  float: left;
+  width: 74px;
+  border: 2pt solid rgb(134, 133, 133);
+}
+#question-numbers input:hover{
+  outline: none;
 }
 
-#question-numbers input{
-  padding: 3px 15px;
-  font-size: 35px;
-}
 
 #questions-info{
-  padding: 10px;
+  padding: 20px;
+  border: 2px solid blue;
   background-color: darkorange;
   font-size: 35px;
 }
 
+#questions-info input{
+  height: 23px;
+  width: 23px;
+}
+
+
 
 #container2{
-  background-color: darkslateblue;
+  background-color: rgb(130, 122, 179);
   padding: 10px;
   height: 100px;
   width: 1500px;
 }
-
 #container2 input{
   font-size: 50px;
   padding: 5px 30px;
 }
 
-
 #div-clock{
   font-size: 30px;
   color: white;
+  padding: 10px;
+  float: right;
+  background-color: rgba(0, 0, 0, 0.431);
+  border: 2px solid white;
+  width: auto;
+  border-radius: 10px;
 }
+
+
+
+
+
