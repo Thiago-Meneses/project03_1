@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto 03-01</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles -second-page.css">
 </head>
 <body>
@@ -11,20 +12,25 @@
     <div id='container'>
         <div id="myProgress">
             <div id="myBar">
-                </a><a id='total-questions'>0</a><a>/100</a>
+                <div id='progress-container'>
+                    </a><a id='total-questions'>0</a><a>/100</a>
+                </div>
             </div>
         </div>
 
-        <div>
+        
             <div id='subject-tab'>
+                <div id='subject-container'>
                 <input type="button" value="Regulamentos"  onclick='reg()'>
                 <input type="button" value="Navegação"     onclick='nav()'>
                 <input type="button" value="Meteorologia"  onclick='met()'>
                 <input type="button" value="Conhecimentos" onclick='ct()'>
                 <input type="button" value="Teoria de Voo" onclick='tv()'> 
+                </div>
             </div> 
 
             <div id='question-numbers'>
+                <div id='question-container'>
                 <input type="button" id='btn1' value="1" onclick='reg_call(1)'>
                 <input type="button" id='btn2' value="2" onclick='reg_call(2)'>
                 <input type="button" id='btn3' value="3" onclick='reg_call(3)'>
@@ -45,8 +51,9 @@
                 <input type="button" id='btn18' value="18" onclick='reg_call(18)'>
                 <input type="button" id='btn19' value="19" onclick='reg_call(19)'>
                 <input type="button" id='btn20' value="20" onclick='reg_call(20)'>
+                </div>
             </div>
-        </div>  
+          
 
         <div>
             <div id='questions-info'>
