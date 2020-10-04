@@ -13,7 +13,7 @@
         <div id="myProgress">
             <div id="myBar">
                 <div id='progress-container'>
-                    </a><a id='total-questions'>0</a><a>/100</a>
+                    <a id='total-questions'>0</a><a>/100</a>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
                 <input type="button" value="Navegação"     onclick='nav()'>
                 <input type="button" value="Meteorologia"  onclick='met()'>
                 <input type="button" value="Conhecimentos" onclick='ct()'>
-                <input type="button" value="Teoria de Voo" onclick='tv()'> 
+                <input class='rightSide' type="button" value="Teoria de Voo" onclick='tv()'> 
                 </div>
             </div> 
 
@@ -50,7 +50,7 @@
                 <input type="button" id='btn17' value="17" onclick='reg_call(17)'>
                 <input type="button" id='btn18' value="18" onclick='reg_call(18)'>
                 <input type="button" id='btn19' value="19" onclick='reg_call(19)'>
-                <input type="button" id='btn20' value="20" onclick='reg_call(20)'>
+                <input class='rightSide' type="button" id='btn20' value="20" onclick='reg_call(20)'>
                 </div>
             </div>
           
@@ -59,25 +59,25 @@
             <div id='questions-info'>
                 <p id='question_header'>1. Durante o táxi as aeronaves devem obedecer as regras:</p>
 
-                <label for="op1">a)</label>
+                <label for="op1" class='options'>a)</label>
                 <input type="radio" id='btn1_op1' name='radio_group' oninput="reg_question_check()">
                 <label for="op1" id='fill_1'>Gerais.</label>
 
                 <br>
 
-                <label for="op2">b)</label>
+                <label for="op2" class='options'>b)</label>
                 <input type="radio" id='btn1_op2' name='radio_group' oninput="reg_question_check()">
                 <label for="op2" id='fill_2'>Específicas.</label>
 
                 <br>
 
-                <label for="op3">c)</label>
+                <label for="op3" class='options'>c)</label>
                 <input type="radio" id='btn1_op3' name='radio_group' oninput="reg_question_check()">
                 <label for="op3" id='fill_3'>De voo visual.</label>
 
                 <br>
 
-                <label for="op4">d)</label>
+                <label for="op4" class='options'>d)</label>
                 <input type="radio" id='btn1_op4' name='radio_group' oninput="reg_question_check()">
                 <label for="op4" id='fill_4'>De voo por instrumentos.</label>
             </div>
@@ -89,6 +89,9 @@
         <div id='div-clock'>
             <p id='clock'></p>
         </div>
+    </div>
+
+    <div id='container3'>
     </div>
     <script src='js-second-page.js'></script>
 </body>
