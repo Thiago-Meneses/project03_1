@@ -3693,11 +3693,19 @@ function tv_question_check(){
 
 
 function finish(){
+  /*var firstMessage = confirm('Tem certeza de que deseja finalizar o simulado?')
+  if ( firstMessage == false ) {
+    return;
+  }
+  var secondMessage = confirm('Essa ação não poderá ser desfeita, continuar mesmo assim?')
+  if ( secondMessage == false ) {
+    return;
+  }*/
   clearInterval(x)
 
   var removebutton = document.getElementById('btn-finish')
-  removebutton.parentNode.removeChild(removebutton);
-
+  removebutton.parentNode.removeChild(removebutton)
+  
   elem.parentNode.removeChild(elem)
   var final_bar = document.createElement('div')
   final_bar.setAttribute('id' , 'finalBar')
@@ -3705,9 +3713,15 @@ function finish(){
   var c_myProgress = document.getElementById('myProgress')
   c_myProgress.appendChild(final_bar)
 
+  var final_progress_container = document.createElement('div')
+  final_progress_container.setAttribute('id' , 'final-progress-container')
+  final_progress_container.style.width = '1436px'
+  var final_bar = document.getElementById('finalBar')
+  final_bar.appendChild(final_progress_container)
+
   var create_final_questions = document.createElement('a')
   create_final_questions.setAttribute('id' , 'finalQuestions')
-  final_bar.appendChild(create_final_questions)
+  final_progress_container.appendChild(create_final_questions)
   create_final_questions_text = document.createTextNode(`${totalQuestions}/100`)
   create_final_questions.appendChild(create_final_questions_text)
 
@@ -3766,10 +3780,12 @@ function finish(){
     }
   }
 
+
   //CREATES TABLE
   var create_table = document.createElement('table')
   create_table.setAttribute('id', 'tabela')
-  document.body.appendChild(create_table)
+  var c_container3 = document.getElementById('container3')
+  c_container3.appendChild(create_table)
 
 
 
@@ -3833,55 +3849,65 @@ function finish(){
 
   var reg_right = document.createElement('td')
   reg_right.setAttribute('id' , 'reg-right')
+  reg_right.setAttribute('class' , 'green')
   var reg_right_text = document.createTextNode(reg_final_correct)
   reg_right.appendChild(reg_right_text)
   row3.appendChild(reg_right)
   var reg_wrong = document.createElement('td')
   reg_wrong.setAttribute('id', 'reg-wrong')
+  reg_wrong.setAttribute('class', 'red')
   var reg_wrong_text = document.createTextNode(reg_final_wrong)
   reg_wrong.appendChild(reg_wrong_text)
   row3.appendChild(reg_wrong)
 
   var nav_right = document.createElement('td')
   nav_right.setAttribute('id' , 'nav-right')
+  nav_right.setAttribute('class' , 'green')
   var nav_right_text = document.createTextNode(nav_final_correct)
   nav_right.appendChild(nav_right_text)
   row3.appendChild(nav_right)
   var nav_wrong = document.createElement('td')
   nav_wrong.setAttribute('id', 'nav-wrong')
+  nav_wrong.setAttribute('class', 'red')
   var nav_wrong_text = document.createTextNode(nav_final_wrong)
   nav_wrong.appendChild(nav_wrong_text)
   row3.appendChild(nav_wrong)
 
   var met_right = document.createElement('td')
   met_right.setAttribute('id' , 'met-right')
+  met_right.setAttribute('class' , 'green')
   var met_right_text = document.createTextNode(met_final_correct)
   met_right.appendChild(met_right_text)
   row3.appendChild(met_right)
   var met_wrong = document.createElement('td')
   met_wrong.setAttribute('id', 'met-wrong')
+  met_wrong.setAttribute('class', 'red')
   var met_wrong_text = document.createTextNode(met_final_wrong)
   met_wrong.appendChild(met_wrong_text)
   row3.appendChild(met_wrong)
 
   var ct_right = document.createElement('td')
   ct_right.setAttribute('id' , 'ct-right')
+  ct_right.setAttribute('class' , 'green')
   var ct_right_text = document.createTextNode(ct_final_correct)
   ct_right.appendChild(ct_right_text)
   row3.appendChild(ct_right)
   var ct_wrong = document.createElement('td')
   ct_wrong.setAttribute('id', 'ct-wrong')
+  ct_wrong.setAttribute('class', 'red')
   var ct_wrong_text = document.createTextNode(ct_final_wrong)
   ct_wrong.appendChild(ct_wrong_text)
   row3.appendChild(ct_wrong)
 
   var tv_right = document.createElement('td')
   tv_right.setAttribute('id' , 'tv-right')
+  tv_right.setAttribute('class' , 'green')
   var tv_right_text = document.createTextNode(tv_final_correct)
   tv_right.appendChild(tv_right_text)
   row3.appendChild(tv_right)
   var tv_wrong = document.createElement('td')
   tv_wrong.setAttribute('id', 'tv-wrong')
+  tv_wrong.setAttribute('class', 'red')
   var tv_wrong_text = document.createTextNode(tv_final_wrong)
   tv_wrong.appendChild(tv_wrong_text)
   row3.appendChild(tv_wrong)
