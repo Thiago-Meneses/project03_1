@@ -6,60 +6,53 @@
   font-family: 'Exo 2', sans-serif;
 }
 
-#myProgress {
-  /*opacity: 0%;*/
-  width: 1480px;
-  height: 40px;
-  font-size: 35px;
-  background-color: grey;
-}
-  
-#myBar {
-  width: 0;
-  height: 40px; 
-  background-color: yellow;
+body{
+  background-color: #181818;
 }
 
-#finalBar {
-  width: 0;
-  height: 20px;
-  background-color: yellow;
-}
-
-
-table{
-  border-collapse: collapse;
-}
-
-th{
-  border: 1pt solid black;
-
-}
-
-td{
-  border: 1pt solid black;
-
-}
 
 #container{
-  background-color: pink;
+  margin: auto;
   width: 1500px;
-  padding: 10px;
+  padding: 30px;
+  padding-top: 50px;
 }
 
 
+#myProgress {
+  border: 2px solid rgb(0, 0, 0);
+  border-bottom: none;
+  width: 1440px;
+  height: 50px;
+  font-size: 35px;
+  background-color: #444444;
+  color:  #61d2dc;
+  text-align: center;
+}
+#myBar {
+  width: 0;
+  height: 48px;
+  background-color: rgb(7, 167, 7);
+}
+#finalBar {
+  width: 0;
+  height: 48px;
+  background-color:rgb(7, 167, 7);
+}
 #progress-container{
-  /*opacity: 0%;*/
-  width: 1500px;
-  position: relative;
+  width: 1436px;
+}
+#total-questions{
+  text-align: center;
+}
+#finalQuestions{
   text-align: center;
 }
 
 
 #subject-container{
-  /*opacity: 0%;*/
   background-color: rgb(62, 177, 39);
-  width: 1480px;
+  width: 1440px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -73,18 +66,27 @@ td{
   font-size: 35px;
   padding: 5px 15px;
   float: left;
-  border: 2px solid rgb(187, 57, 57);
+  border: 2px solid #000000;
+  border-right: none;
+  border-bottom: none;
   position: relative;
-  width: 296px;
+  width: 288px;
+  background-color:  #3e858b;
+  color: #000000;
+  transition: 0.4s;
+}
+#subject-tab input:hover{
+  background-color:  #56bfc9;
+  cursor: pointer;
 }
 #subject-tab input:focus{
+  background-color:  #56bfc9;
   outline: none;
 }
 
 
 #question-container{
-  /*opacity: 0%;*/
-  width: 1480px;
+  width: 1440px;
   display:table;
   background-color: black;
   position: relative;
@@ -94,54 +96,121 @@ td{
   padding: 0;
 }
 #question-numbers input{
-  /*padding: 3px 15px;*/
   font-size: 35px;
   float: left;
-  width: 74px;
-  border: 2pt solid rgb(134, 133, 133);
+  width: 72px;
+  border: 2px solid #000000;
+  border-right: none;
+  background-color:  #3e858b;
+  color: #000000;
+  transition: 0.4s;
 }
 #question-numbers input:hover{
+  background-color:  #56bfc9;
+  cursor: pointer;
+}
+#question-numbers input:focus{
+  background-color:  #56bfc9;
   outline: none;
+}
+input.rightSide{
+  border-right: 2pt solid #000000 !important;
 }
 
 
 #questions-info{
-  padding: 20px;
-  border: 2px solid blue;
-  background-color: darkorange;
+  padding: 30px 20px 50px 20px;
+  border: 2px solid #000000;
+  border-top: none;
   font-size: 35px;
+  background-color:  #56bfc9;
+  color: #000000;
 }
 
 #questions-info input{
   height: 23px;
   width: 23px;
+  vertical-align: baseline;
+}
+.options{
+  display: inline-block;
+  width: 30px;
 }
 
 
 
 #container2{
-  background-color: rgb(130, 122, 179);
-  padding: 10px;
-  height: 100px;
+  margin: auto;
+  padding: 30px;
+  padding-top: 0;
+  height: 80px;
   width: 1500px;
 }
 #container2 input{
   font-size: 50px;
   padding: 5px 30px;
+  background-color:   #0000006b;
+  color: #56bfc9;
+  border: 1px solid #56bfc9;
+}
+#container2 input:hover{
+  background-color: #000000;
+  cursor: pointer;
+}
+#container2 input:focus{
+  outline: none;
 }
 
 #div-clock{
   font-size: 30px;
-  color: white;
+  color: #56bfc9;
   padding: 10px;
   float: right;
   background-color: rgba(0, 0, 0, 0.431);
-  border: 2px solid white;
-  width: auto;
+  border: 2px solid #56bfc9;
+  width: 190px;
+  text-align: center;
   border-radius: 10px;
 }
 
 
+#container3{
+  margin: auto;
+  padding: 30px;
+  padding-top: 0;
+  height: 800px;
+  width: 1500px;
+}
 
+table{
+  border-collapse: collapse;
+  color: #56bfc9;
+  margin: auto;
+  font-size: 35px;
+}
+
+th{
+  border: 1pt solid rgb(255, 255, 255);
+  padding: 30px 10px;
+  width: 20%;
+  background-color: rgba(0, 0, 0, 0.431);
+}
+
+td{
+  border: 1pt solid rgb(255, 255, 255);
+  padding: 30px 10px;
+  text-align: center;
+  width: 10%;
+}
+
+td.green{
+  color: white;
+  background-color:  rgba(62, 177, 39, 0.842);
+}
+
+td.red{
+  color: white;
+  background-color: rgba(236, 17, 17, 0.76);
+}
 
 
